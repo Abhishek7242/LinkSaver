@@ -19,9 +19,8 @@ let background
 
             box.classList.add('box')
             box.classList.add(...boxClasses)
-            box.style.background = '#ffffff'
-            background = box.style.background = '#ffffff'
-            localStorage.setItem('background' + index, background)
+     
+      
             let boxSpan = document.createElement('span')
             // boxSpan.id = 'customize'+index
             boxSpan.classList.add('customize')
@@ -579,7 +578,8 @@ if (localStorage.length > 0) {
         
         box.classList.add('box')
         box.classList.add(...boxClasses)
-        if (background.startsWith('#')) {
+
+        if (background && background.startsWith('#')) {
             box.style.background = `${background}`;
 
         } else {
