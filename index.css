@@ -37,7 +37,7 @@ font-family: 'Roboto Serif',
 }
 #mainContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
-    background: url('https://img.freepik.com/free-vector/abstract-blue-technology-background_23-2149352058.jpg') no-repeat center center/cover;
+    background: url('https://img.freepik.com/free-vector/abstract-blue-technology-background_23-2149352058.jpg') center ;
     width: 100%;
     min-height: 100vh;
 }

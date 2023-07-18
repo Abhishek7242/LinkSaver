@@ -19,6 +19,9 @@ let background
 
             box.classList.add('box')
             box.classList.add(...boxClasses)
+            box.style.background = '#ffffff'
+            background = box.style.background = '#ffffff'
+            localStorage.setItem('background' + index, background)
             let boxSpan = document.createElement('span')
             // boxSpan.id = 'customize'+index
             boxSpan.classList.add('customize')
