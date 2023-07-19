@@ -871,16 +871,6 @@ if (localStorage.length > 0) {
                     });
                 });
 
-
-
-
-
-
-
-
-                
-                
-
                 backgroundBoxSpan.addEventListener('click', () => {
                     backgroundBox.style.alignSelf = ''
                     backgroundBox.style.width = ''
@@ -893,7 +883,6 @@ if (localStorage.length > 0) {
                         backgroundBox.remove();
                         location.reload()
                     }, 1000)
-
                 })
                 colorPicker = document.getElementById('colorPicker');
                 console.log(colorPicker)
@@ -902,10 +891,17 @@ if (localStorage.length > 0) {
 
                     // form.style.background = colorPicker.value
                     let box = findParentWithClass(ele.target, 'box');
+                    let key = box.getAttribute('data-key');
+
                     console.log(box);
 
                     box.style.background = colorPicker.value;
-                    localStorage.setItem('background' + key.slice(4), colorPicker.value);
+                    if (key) {
+                        const backgroundKey = 'background' + key.slice(4);
+                        localStorage.setItem(backgroundKey, colorPicker.value);
+                    }
+
+             
                 });
 
 
