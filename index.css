@@ -37,7 +37,7 @@ font-family: 'Roboto Serif',
 }
 #mainContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
-    background: url('https://img.freepik.com/free-vector/abstract-blue-technology-background_23-2149352058.jpg') center ;
+    background: url('https://img.freepik.com/free-vector/abstract-blue-technology-background_23-2149352058.jpg') no-repeat center center/cover;
     width: 100%;
     min-height: 100vh;
 }
@@ -80,7 +80,7 @@ opacity: 0;
     width: 20%;
   height: 300px;
 left: -100px;
-transition: all 0.4s ease-in-out;
+transition: all 0.3s ease-in-out;
 
 }
 .borderTheme{
