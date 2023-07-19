@@ -553,10 +553,12 @@ if (localStorage.length > 0) {
         svgElement.appendChild(pathElement);
 
         let boxImg = document.createElement('img')
+        boxImg.classList.add('boxImg')
         boxImg.src = "https://cutewallpaper.org/24/amazon-png-logo/amazon-icon-png-logo-symbol-black.png"
         boxImg.setAttribute('height', '100px')
         boxImg.setAttribute('width', '100px')
         let boxA = document.createElement('a')
+        boxA.classList.add('boxA')
         // boxA.id = 'boxA' + index
         boxA.href = inputHTML
         boxA.classList.add('text-dark')
@@ -632,18 +634,45 @@ if (localStorage.length > 0) {
             let backgroundBoxSpan = document.getElementById('cancelBackground')
 
             // 
+       
+            
 
             element.addEventListener('click', (ele) => {
+          
                 let backgroundBox = document.getElementById('backgroundBox')
                 const makeAllPlays = () => {
                     Array.from(document.getElementsByClassName('themeselect')).forEach((element) => {
+
+              
                         backgroundBox.remove();
 
                     })
                 }
                 makeAllPlays()
+                let mainNavbar = document.getElementById('mainContainer')
+                let boxElements = document.querySelectorAll('.box');
 
+                boxElements.forEach((box) => {
+                    box.style.width = '0px';
+                    box.style.height = '0px';
+                    box.style.display = 'none';
+                });
+                let boxImg = document.querySelectorAll('.boxImg');
 
+                boxImg.forEach((box) => {
+               
+                    box.style.display = 'none';
+                });
+                let boxA = document.querySelectorAll('.boxA');
+
+                boxA.forEach((box) => {
+               
+                    box.style.display = 'none';
+                });
+
+                mainNavbar.style.height='100vh'
+             
+                
                 let backgroundBoxClasses = ['shadow-lg', 'justify-content-around', 'align-items-center', 'p-3', 'mb-5', 'bg-white', 'rounded', 'addBtn', 'col-3', 'bg-light', 'text-light', 'd-flex', 'm-3', 'my-3', 'pt-5', 'text-dark']
                 let backgroundBoxLogoClasses = ['d-flex', 'align-items-center', 'w-100', 'position-absolute', 'top-0', 'justify-content-between', 'bg-info', 'w-100', 'px-2']
                 let colorBoxClasses = ['d-flex', 'justify-content-start', 'align-items-start', 'mb-5']
