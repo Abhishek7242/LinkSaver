@@ -10,6 +10,7 @@ let parentDiv
 let background
 inputBox.style.opacity = 1
 doneBtn.addEventListener('click', (e) => {
+    e.preventDefault()
     if (nameinput.value == '' || urlinput.value == '') {
         return
     }
@@ -517,6 +518,7 @@ if (localStorage.length > 0) {
         let inputHTML = localStorage.getItem('url' + key.slice(4));
         let name = localStorage.getItem('name' + key.slice(4));
         let background = localStorage.getItem('background' + key.slice(4));
+        let star = localStorage.getItem('star' + key.slice(4));
         
         let box = document.createElement('div')
         box.classList.add('box')
@@ -540,6 +542,9 @@ if (localStorage.length > 0) {
         boxSpan.classList.add('align-self-end')
         boxSpan.classList.add('top-0')
         boxSpan.classList.add('mt-3')
+        if (star) {
+            boxSpan.classList.add('star-present');
+        }
         const svgNS = 'http://www.w3.org/2000/svg';
         const svgElement = document.createElementNS(svgNS, 'svg');
         svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -552,6 +557,29 @@ if (localStorage.length > 0) {
         pathElement.setAttribute('d', 'M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z');
         svgElement.appendChild(pathElement);
 
+        let boxSpan3 = document.createElement('span')
+        // boxSpan.3d = 'customize'+index
+        boxSpan3.classList.add('selected')
+        boxSpan3.role = 'button'
+        boxSpan3.classList.add('position-absolute')
+        boxSpan3.classList.add('svg')
+        boxSpan3.classList.add('text-dark')
+        boxSpan3.classList.add('align-self-start')
+        boxSpan3.classList.add('top-0')
+        boxSpan3.classList.add('mt-3')
+        const svgNS3 = 'http://www.w3.org/2000/svg';
+        const svgElement3 = document.createElementNS(svgNS3, 'svg');
+        svgElement3.classList.add('text-warning')
+        svgElement3.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        svgElement3.setAttribute('width', '16');
+        svgElement3.setAttribute('height', '16');
+        svgElement3.setAttribute('fill', 'currentColor');
+        svgElement3.classList.add('bi', 'bi-star');
+        svgElement3.setAttribute('viewBox', '0 0 16 16');
+        const pathElement3 = document.createElementNS(svgNS3, 'path');
+        pathElement3.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
+        svgElement3.appendChild(pathElement3);
+        
         let boxImg = document.createElement('img')
         boxImg.classList.add('boxImg')
         boxImg.src = "https://cutewallpaper.org/24/amazon-png-logo/amazon-icon-png-logo-symbol-black.png"
@@ -566,12 +594,12 @@ if (localStorage.length > 0) {
         boxA.classList.add('py-2')
         boxA.classList.add('px-4')
         let str = name
-
+        
         const url = inputHTML;
         const startIndex = url.indexOf('.com/') + 5;
         const endIndex = url.indexOf('/', startIndex);
         const extractedText = url.substring(startIndex, endIndex);
-
+        
         console.log(extractedText);
         function getWebsiteLogo(websiteUrl) {
             // Construct the favicon URL based on the website URL
@@ -586,24 +614,24 @@ if (localStorage.length > 0) {
                 boxImg.src = 'https://www.freepnglogos.com/uploads/logo-website-png/logo-website-website-logo-png-transparent-background-background-15.png'
             });
         }
-
+        
         // Retrieve logo button click event handler
-
+        
         const websiteUrl = extractedText;
         getWebsiteLogo(websiteUrl);
         boxA.innerText = str[0].toUpperCase() + str.slice(1)
         boxA.setAttribute('role', 'button')
-
+        
         let boxSpan2 = document.createElement('span')
         boxSpan2.classList.add('dotBtn')
-
+        
         boxSpan2.role = 'button'
         boxSpan2.classList.add('svg')
         boxSpan2.classList.add('position-absolute')
         boxSpan2.classList.add('align-self-end')
         boxSpan2.classList.add('bottom-0')
         boxSpan2.classList.add('mb-3')
-
+        
         const svgNS2 = 'http://www.w3.org/2000/svg';
         const svgElement2 = document.createElementNS(svgNS2, 'svg');
         svgElement2.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -612,53 +640,162 @@ if (localStorage.length > 0) {
         svgElement2.setAttribute('fill', 'currentColor');
         svgElement2.classList.add('bi', 'bi-three-dots-vertical');
         svgElement2.setAttribute('viewBox', '0 0 16 16');
-
+        
         const pathElement2 = document.createElementNS(svgNS2, 'path');
         pathElement2.setAttribute('d', 'M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z');
-
+        
         svgElement2.appendChild(pathElement2);
-
-
-
-
-
+        
+        
+        
+        
+        
         container.appendChild(box)
         box.appendChild(boxSpan)
+        box.appendChild(boxSpan3)
         boxSpan.appendChild(svgElement)
+        boxSpan3.appendChild(svgElement3)
         box.appendChild(boxImg)
         box.appendChild(boxA)
         box.appendChild(boxSpan2)
         boxSpan2.appendChild(svgElement2)
+
+        // function star(element, className) {
+        //     let parent = element.parentNode;
+        //     while (parent !== null) {
+        //         if (parent.classList && parent.classList.contains(className)) {
+        //             console.log(parent)
+        //             return parent;
+        //         }
+        //         parent = parent.parentNode;
+        //     }
+        //     return null; // If no parent with the class is found
+        // Function to bring a box to the top
+        // Function to bring a box to the top
+  // Function to insert a new element after a reference element
+function insertAfter(newElement, referenceElement) {
+  referenceElement.parentNode.insertBefore(newElement, referenceElement.nextSibling);
+}
+
+// Function to bring a box to the top
+function bringToTop(box) {
+  const parent = box.parentNode;
+  parent.removeChild(box);
+  insertAfter(box, parent.firstChild); // Insert after the first child
+}
+
+// Function to bring a specific box to the top when its SVG is filled
+function bringBoxToTop(selectedElement) {
+  const box = selectedElement.closest('.box');
+  const isSVGFilled = selectedElement.querySelector('svg.bi-star-fill');
+
+  if (isSVGFilled) {
+    bringToTop(box);
+  }
+}
+
+// Add event listener to each "selected" element
+document.querySelectorAll('.selected').forEach((element) => {
+  element.addEventListener('click', (e) => {
+    e.stopPropagation(); // Stop the event from propagating
+    // Find the clicked element (e.target) as the selected element
+    const selectedElement = e.target.classList.contains('selected')
+      ? e.target
+      : e.target.closest('.selected');
+
+    // Check if the selected element has an SVG child
+    const svgChild = selectedElement.querySelector('svg');
+
+    // Check if the SVG child contains the class "bi-star"
+    if (svgChild && svgChild.classList.contains('bi-star')) {
+      // Remove the existing SVG element with "bi-star"
+      selectedElement.removeChild(svgChild);
+
+      // Create a new filled SVG element with the class 'bi-star-fill'
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svgElement = document.createElementNS(svgNS, 'svg');
+      svgElement.classList.add('bi', 'bi-star-fill');
+      svgElement.classList.add('text-warning');
+      svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      svgElement.setAttribute('width', '16');
+      svgElement.setAttribute('height', '16');
+      svgElement.setAttribute('fill', 'currentColor');
+      svgElement.setAttribute('viewBox', '0 0 16 16');
+      const pathElement = document.createElementNS(svgNS, 'path');
+      pathElement.setAttribute('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
+      svgElement.appendChild(pathElement);
+
+      // Append the new filled SVG element to the "selected" element
+      selectedElement.appendChild(svgElement);
+
+      // Bring the box to the top if its SVG is filled
+      bringBoxToTop(selectedElement);
+    } else if (svgChild && svgChild.classList.contains('bi-star-fill')) {
+      // Remove the existing SVG element with "bi-star-fill"
+      selectedElement.removeChild(svgChild);
+
+      // Create a new SVG element with the class 'bi-star'
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svgElement = document.createElementNS(svgNS, 'svg');
+      svgElement.classList.add('bi', 'bi-star');
+      svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      svgElement.setAttribute('width', '16');
+      svgElement.setAttribute('height', '16');
+      svgElement.setAttribute('fill', 'currentColor');
+      svgElement.setAttribute('viewBox', '0 0 16 16');
+      const pathElement = document.createElementNS(svgNS, 'path');
+      pathElement.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.a.525.a.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.a.525.a.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0');
+
+      svgElement.appendChild(pathElement);
+
+      // Append the new SVG element to the "selected" element
+      selectedElement.appendChild(svgElement);
+
+      // Bring the box to the top if its SVG is filled
+      bringBoxToTop(selectedElement);
+    }
+  });
+});
+
+
+
+
+
+
+
+        
+        
+        
         Array.from(document.getElementsByClassName('customize')).forEach((element) => {
-
-            let backgroundBoxSpan = document.getElementById('cancelBackground')
-
-            // 
-       
             
-
+            let backgroundBoxSpan = document.getElementById('cancelBackground')
+            
+            // 
+            
+            
+            
             element.addEventListener('click', (ele) => {
-          
+                
                 let backgroundBox = document.getElementById('backgroundBox')
                 const makeAllPlays = () => {
                     Array.from(document.getElementsByClassName('themeselect')).forEach((element) => {
-
-              
+                        
+                        
                         backgroundBox.remove();
-
+                        
                     })
                 }
                 makeAllPlays()
                 let mainNavbar = document.getElementById('mainContainer')
                 let boxElements = document.querySelectorAll('.box');
-
+                
                 boxElements.forEach((box) => {
                     box.style.width = '0px';
                     box.style.height = '0px';
                     box.style.display = 'none';
                 });
                 let boxImg = document.querySelectorAll('.boxImg');
-
+                
                 boxImg.forEach((box) => {
                
                     box.style.display = 'none';

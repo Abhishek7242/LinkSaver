@@ -25,8 +25,14 @@ body {
 #mainNavbar .navbar-brand {
 font-family: 'Roboto Serif',
         serif;
-    color: #00d0ff;
-
+    color: #fed494;
+    
+}
+.text-color{
+    color: #CFB997;
+}
+.text-color-h{
+    color: #fed494;
 }
 #mainNavbar {
     font-weight: 400;
@@ -37,9 +43,9 @@ font-family: 'Roboto Serif',
 }
 #mainContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
-    background: url('https://img.freepik.com/free-vector/abstract-blue-technology-background_23-2149352058.jpg') center;
     width: 100%;
     min-height: 100vh;
+    background-color: #9BA17B;
 }
 #container #backgroundBox{
     background: url('https://wallpapers.com/images/featured/mix-color-background-r4e9huzf751xgw78.jpg') no-repeat center center/cover;
@@ -52,6 +58,11 @@ font-family: 'Roboto Serif',
         /* width: 50%; */
         /* min-height: 50vh; */
         left: -400px;
+}
+
+#section1{
+height: 600px;
+background-color: #61764B;
 }
 .overflow {
     overflow: scroll;
@@ -236,6 +247,10 @@ transform: rotate(180deg);
     color: #EA1c2c;
 }
 
+#footer{
+    background-color: #FAD6A5;
+}
+
 @media (max-width:1200px) {
     #headingGroup h1 {
 
@@ -245,6 +260,10 @@ transform: rotate(180deg);
 }
 
 @media (max-width:900px) {
+    #info{
+        width: 100%;
+
+    }
     .eattime a {
         font-size: larger;
         width: 4rem;
