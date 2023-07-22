@@ -44,6 +44,17 @@ doneBtn.addEventListener('click', (e) => {
         const pathElement = document.createElementNS(svgNS, 'path');
         pathElement.setAttribute('d', 'M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z');
         svgElement.appendChild(pathElement);
+     let boxSpan3 = document.createElement('span')
+        // boxSpan.3d = 'customize'+index
+        boxSpan3.classList.add('selected')
+        boxSpan3.role = 'button'
+        boxSpan3.classList.add('position-absolute')
+        boxSpan3.classList.add('svg')
+        boxSpan3.classList.add('text-dark')
+        boxSpan3.classList.add('align-self-start')
+        boxSpan3.classList.add('top-0')
+        boxSpan3.classList.add('mt-3')
+
 
         let boxImg = document.createElement('img')
         boxImg.setAttribute('height', '100px')
@@ -124,6 +135,7 @@ doneBtn.addEventListener('click', (e) => {
         box.appendChild(boxImg)
         box.appendChild(boxA)
         box.appendChild(boxSpan2)
+        box.appendChild(boxSpan3)
         boxSpan2.appendChild(svgElement2)
 
         inputBox.style.width = '20%'
@@ -489,6 +501,7 @@ doneBtn.addEventListener('click', (e) => {
         localStorage.setItem('name' + index, nameSave)
         localStorage.setItem('url' + index, urlSave)
         localStorage.setItem('background' + index, background)
+        localStorage.setItem('span3' + index, boxSpan3.outerHTML)
     }
     index++
     setTimeout(() => {
@@ -542,11 +555,8 @@ if (localStorage.length > 0) {
         boxSpan.classList.add('align-self-end')
         boxSpan.classList.add('top-0')
         boxSpan.classList.add('mt-3')
-        if (star) {
-            boxSpan.classList.add('star-present');
-        }
         const svgNS = 'http://www.w3.org/2000/svg';
-        const svgElement = document.createElementNS(svgNS, 'svg');
+       const svgElement = document.createElementNS(svgNS, 'svg');
         svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
         svgElement.setAttribute('width', '16');
         svgElement.setAttribute('height', '16');
@@ -556,29 +566,66 @@ if (localStorage.length > 0) {
         const pathElement = document.createElementNS(svgNS, 'path');
         pathElement.setAttribute('d', 'M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z');
         svgElement.appendChild(pathElement);
-
+        let svgElement3
+        
         let boxSpan3 = document.createElement('span')
         // boxSpan.3d = 'customize'+index
         boxSpan3.classList.add('selected')
         boxSpan3.role = 'button'
+        boxSpan3.dataset.key = key;
+
         boxSpan3.classList.add('position-absolute')
         boxSpan3.classList.add('svg')
         boxSpan3.classList.add('text-dark')
         boxSpan3.classList.add('align-self-start')
         boxSpan3.classList.add('top-0')
         boxSpan3.classList.add('mt-3')
-        const svgNS3 = 'http://www.w3.org/2000/svg';
-        const svgElement3 = document.createElementNS(svgNS3, 'svg');
-        svgElement3.classList.add('text-warning')
-        svgElement3.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        svgElement3.setAttribute('width', '16');
-        svgElement3.setAttribute('height', '16');
-        svgElement3.setAttribute('fill', 'currentColor');
-        svgElement3.classList.add('bi', 'bi-star');
-        svgElement3.setAttribute('viewBox', '0 0 16 16');
-        const pathElement3 = document.createElementNS(svgNS3, 'path');
-        pathElement3.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-        svgElement3.appendChild(pathElement3);
+        if (star) {
+            // Create a new filled SVG element with the class 'bi-star-fill'
+            const svgNS = 'http://www.w3.org/2000/svg';
+             svgElement3 = document.createElementNS(svgNS, 'svg');
+            svgElement3.classList.add('bi', 'bi-star-fill');
+            svgElement3.classList.add('text-warning');
+            svgElement3.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            svgElement3.setAttribute('width', '16');
+            svgElement3.setAttribute('height', '16');
+            svgElement3.setAttribute('fill', 'currentColor');
+            svgElement3.setAttribute('viewBox', '0 0 16 16');
+            const pathElement = document.createElementNS(svgNS, 'path');
+            pathElement.setAttribute('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
+            svgElement3.appendChild(pathElement);
+            container.appendChild(box)
+
+            function bringToTop(box) {
+                const parent = box.parentNode;
+                parent.removeChild(box);
+                insertAfter(box, parent.firstChild); // Insert after the first child
+            }
+            
+            bringToTop(box)
+            // Append the new filled SVG element to the "selected" element
+            // selectedElement.appendChild(svgElement);
+
+            // Bring the box to the top if its SVG is filled
+            // bringBoxToTop(selectedElement);
+        } else {
+            console.log('span')
+   
+            const svgNS3 = 'http://www.w3.org/2000/svg';
+             svgElement3 = document.createElementNS(svgNS3, 'svg');
+            svgElement3.classList.add('text-warning')
+            svgElement3.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            svgElement3.setAttribute('width', '16');
+            svgElement3.setAttribute('height', '16');
+            svgElement3.setAttribute('fill', 'currentColor');
+            svgElement3.classList.add('bi', 'bi-star');
+            svgElement3.setAttribute('viewBox', '0 0 16 16');
+            const pathElement3 = document.createElementNS(svgNS3, 'path');
+            pathElement3.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
+            svgElement3.appendChild(pathElement3);
+            container.appendChild(box)
+
+        }
         
         let boxImg = document.createElement('img')
         boxImg.classList.add('boxImg')
@@ -650,7 +697,6 @@ if (localStorage.length > 0) {
         
         
         
-        container.appendChild(box)
         box.appendChild(boxSpan)
         box.appendChild(boxSpan3)
         boxSpan.appendChild(svgElement)
@@ -696,17 +742,38 @@ function bringBoxToTop(selectedElement) {
 
 // Add event listener to each "selected" element
 document.querySelectorAll('.selected').forEach((element) => {
-  element.addEventListener('click', (e) => {
+    element.addEventListener('click', (e) => {
     e.stopPropagation(); // Stop the event from propagating
     // Find the clicked element (e.target) as the selected element
     const selectedElement = e.target.classList.contains('selected')
-      ? e.target
+    ? e.target
       : e.target.closest('.selected');
 
     // Check if the selected element has an SVG child
     const svgChild = selectedElement.querySelector('svg');
-
+    
     // Check if the SVG child contains the class "bi-star"
+    function findParentWithClass(element, className) {
+        let parent = element.parentNode;
+        while (parent !== null) {
+            if (parent.classList && parent.classList.contains(className)) {
+                console.log(parent);
+                return parent;
+            }
+            parent = parent.parentNode;
+        }
+        return null; // If no parent with the class is found
+    }
+    let box = findParentWithClass(e.target, 'selected');
+    let key = box.getAttribute('data-key');
+    console.log(key);
+    
+    
+    // Update the background value in localStorage
+    if (key) {
+        const backgroundKey = 'star' + key.slice(4);
+        localStorage.setItem(backgroundKey,'filled');
+    }
     if (svgChild && svgChild.classList.contains('bi-star')) {
       // Remove the existing SVG element with "bi-star"
       selectedElement.removeChild(svgChild);
@@ -729,29 +796,41 @@ document.querySelectorAll('.selected').forEach((element) => {
       selectedElement.appendChild(svgElement);
 
       // Bring the box to the top if its SVG is filled
-      bringBoxToTop(selectedElement);
+        bringBoxToTop(selectedElement);
+        if (key) {
+            const backgroundKey = 'star' + key.slice(4);
+            localStorage.setItem(backgroundKey, 'filled');
+        }
     } else if (svgChild && svgChild.classList.contains('bi-star-fill')) {
-      // Remove the existing SVG element with "bi-star-fill"
+        // Remove the existing SVG element with "bi-star-fill"
       selectedElement.removeChild(svgChild);
 
       // Create a new SVG element with the class 'bi-star'
       const svgNS = 'http://www.w3.org/2000/svg';
       const svgElement = document.createElementNS(svgNS, 'svg');
-      svgElement.classList.add('bi', 'bi-star');
+        svgElement.classList.add('bi', 'bi-star');
+        svgElement.classList.add('text-warning');
+
       svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
       svgElement.setAttribute('width', '16');
       svgElement.setAttribute('height', '16');
       svgElement.setAttribute('fill', 'currentColor');
       svgElement.setAttribute('viewBox', '0 0 16 16');
       const pathElement = document.createElementNS(svgNS, 'path');
-        pathElement.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
-
-
+      pathElement.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
+      
+      
       svgElement.appendChild(pathElement);
-
+      
       // Append the new SVG element to the "selected" element
       selectedElement.appendChild(svgElement);
+      
+      if (key) {
+          const backgroundKey = 'star' + key.slice(4);
 
+          // Now remove the item from localStorage using the backgroundKey
+          localStorage.removeItem(backgroundKey);
+      }
       // Bring the box to the top if its SVG is filled
       bringBoxToTop(selectedElement);
     }
