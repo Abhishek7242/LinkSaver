@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;1,600&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;1,600&family=Roboto+Serif:ital,wght@1,700&family=Ubuntu&display=swap');
+
+/* font-family: 'Nunito',
+sans-serif;
+font-family: 'Ubuntu',
+sans-serif; */
+/* 
+font-family: 'Roboto Serif',
+serif; */
+
+* {
+
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: #f9d5d9; */
+    font-family: 'Nunito', sans-serif;
+
+}
+
+#mainNavbar .navbar-brand {
+font-family: 'Roboto Serif',
+        serif;
+    color: #fed494;
+    
+}
+.text-color{
+    color: #CFB997;
+}
+.text-color-h{
+    color: #fed494;
+}
+#mainNavbar {
+    font-weight: 400;
+    color: #EA1c2c;
+    background-color: rgba(0, 0, 0,0.2);
+    box-shadow: 0 0 2rem black;
+
+}
+#mainContainer{
+    /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
+    width: 100%;
+    min-height: 100vh;
+    background-color: #9BA17B;
+}
+#container #backgroundBox{
+    background: url('https://wallpapers.com/images/featured/mix-color-background-r4e9huzf751xgw78.jpg') no-repeat center center/cover;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        align-self: center;
+        /* width: 50%; */
+        /* min-height: 50vh; */
+        left: -400px;
+}
+
+#section1{
+height: 600px;
+background-color: #61764B;
+}
+.overflow {
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.overflow::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+#container #inputBox{
+    background: url('https://cutewallpaper.org/34/dusty-blue-solid-hd-wallpaper/723631840.jpg') no-repeat center center/cover;
+    overflow: hidden;
+    position: absolute;
+z-index: -1;
+opacity: 0;
+    align-self: start;
+    /* top: 0; */
+    width: 20%;
+  height: 300px;
+left: -100px;
+transition: all 0.3s ease-in-out;
+
+}
+.borderTheme{
+    box-sizing: content-box;
+    border: 3px solid rgb(4, 0, 255);
+}
+.theme{
+ 
+    width: 90px;
+    border-radius: 200px;
+    background: url('https://cutewallpaper.org/34/dusty-blue-solid-hd-wallpaper/723631840.jpg') no-repeat center center/cover;
+    display: inline-block;
+    overflow: hidden;
+    height: 90px;
+}
+
+#backgroundBox h4{
+    padding: 0;
+    margin: 0;
+}
+#addPage{
+  
+    left: 0;
+    background: linear-gradient(90deg,rgb(105, 255, 253),rgb(70, 159, 255),rgb(38, 0, 228));
+    /* border-top-left-radius: 9px; */
+    /* border-top-right-radius: 9px; */
+}
+#container #addPage #addLogo{
+box-shadow: none!important; 
+   margin: 0;
+}
+#container{
+    /* min-width: 30%; */
+    /* height: 90%; */
+}
+#box{
+    
+    background: url('') no-repeat center center/cover;
+}
+#container .addBtn{
+    /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important; */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important;
+    width: 250px;
+    height:300px;
+    border-radius: 10px;
+}
+
+#container a{
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .533) !important;
+    /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important; */
+    text-decoration: none;
+    color: #000;
+font-size: larger;
+font-weight: bolder;
+}
+#container .svg{
+    /* z-index: 2; */
+    border-radius: 3px;
+    color: #000;
+    /* background-color: rgba(0, 0, 0,0.3); */
+    /* box-shadow: 0 0rem 1rem rgba(0, 0, 0) !important; */
+    /* box-shadow: 0 1rem 2rem rgb(0, 0, 0) !important; */
+}
+
+
+.input{
+    color: #000;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+#container #addImg{
+    /* border-radius: 10rem; */
+    /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important; */
+
+}
+#container #addImg:hover{
+    transition: transform 0.4s ;
+transform: rotate(180deg);
+}
+.eattime a {
+    font-size: larger;
+    width: 150px;
+    font-weight: 900;
+    font: 1em sans-serif;
+    border-radius: 5px;
+    /* box-shadow: 0 0 19px black; */
+    margin: 0;
+
+}
+
+.eattime a:hover,
+.eattime a:focus {
+    /* color: rgb(0, 255, 8)!important; */
+    background-color: rgb(0, 0, 0) !important;
+
+}
+
+.blurb h2 {
+    font-weight: 100;
+    color: #EA1c2c;
+    font-size: 2.5rem;
+}
+
+.blurb p {
+    font-weight: 100;
+    color: #f498b8;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#mainNavbar .nav-link {
+
+
+    color: white;
+}
+
+#mainNavbar .nav-link:hover,
+#mainNavbar .nav-link:focus {
+
+    color: #EA1c2c;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#headingGroup span {
+    color: #EA1c2c;
+}
+
+#headingGroup h1 {
+
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+.navbar.scrolled {
+
+    background-color: rgb(83, 193, 101);
+    transition: background 0.5s;
+}
+
+#mainNavbar .active {
+    color: #EA1c2c;
+}
+
+#footer{
+    background-color: #FAD6A5;
+}
+
+@media (max-width:1200px) {
+    #headingGroup h1 {
+
+        font-weight: 100;
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:900px) {
+    #info{
+        width: 100%;
+
+    }
+    .eattime a {
+        font-size: larger;
+        width: 4rem;
+        font-weight: 900;
+        font: 0.6em sans-serif;
+        border-radius: 5px;
+        /* box-shadow: 0 0 19px black; */
+        margin: 0;
+        padding: 0.2rem !important;
+    }
+
+    #eattime img {
+        padding: 0;
+    }
+
+    #heading h1 img {
+        display: none;
+    }
+}
