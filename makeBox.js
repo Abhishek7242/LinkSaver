@@ -594,18 +594,41 @@ if (localStorage.length > 0) {
             const pathElement = document.createElementNS(svgNS, 'path');
             pathElement.setAttribute('d', 'M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z');
             svgElement3.appendChild(pathElement);
-            container.appendChild(box)
-
-            function bringToTop(box) {
-                const parent = box.parentNode;
-                parent.removeChild(box);
-                insertAfter(box, parent.firstChild); // Insert after the first child
-            }
             
-            bringToTop(box)
+            // function bringToTop(box) {
+            //     const parent = box.parentNode;
+            //     parent.removeChild(box);
+            //     insertAfter(box, parent.firstChild); // Insert after the first child
+            // }
+            
+            // bringToTop(box)
+            // Function to insert an element after another element
+            function insertAfter(newNode, referenceNode) {
+                referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+            }
+
+            // Get the container and its first child (addNewBox)
+            // const container = document.getElementById("container");
+            const addNewBox = document.getElementById("addNewBox");
+
+            // Create a new child element to be appended
+            const newChildElement = box
+            // newChildElement.textContent = "New Child Element";
+            // You can customize the newChildElement as per your requirements
+
+            // Append the new child element after the "addNewBox" sibling
+            insertAfter(newChildElement, addNewBox);
+
+
+            // Check if the selected element has an SVG child
+            // container.appendChild(box)
+            console.log(box)
+            boxSpan3.appendChild(svgElement3)
+            bringBoxToTop(svgElement3)
+
             // Append the new filled SVG element to the "selected" element
             // selectedElement.appendChild(svgElement);
-
+            
             // Bring the box to the top if its SVG is filled
             // bringBoxToTop(selectedElement);
         } else {
@@ -624,6 +647,8 @@ if (localStorage.length > 0) {
             pathElement3.setAttribute('d', 'M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z');
             svgElement3.appendChild(pathElement3);
             container.appendChild(box)
+            boxSpan3.appendChild(svgElement3)
+
 
         }
         
@@ -700,7 +725,6 @@ if (localStorage.length > 0) {
         box.appendChild(boxSpan)
         box.appendChild(boxSpan3)
         boxSpan.appendChild(svgElement)
-        boxSpan3.appendChild(svgElement3)
         box.appendChild(boxImg)
         box.appendChild(boxA)
         box.appendChild(boxSpan2)
@@ -719,27 +743,32 @@ if (localStorage.length > 0) {
         // Function to bring a box to the top
         // Function to bring a box to the top
   // Function to insert a new element after a reference element
-function insertAfter(newElement, referenceElement) {
-  referenceElement.parentNode.insertBefore(newElement, referenceElement.nextSibling);
-}
+// function insertAfter(newElement, referenceElement) {
+//   referenceElement.parentNode.insertBefore(newElement, referenceElement.nextSibling);
+// }
 
 // Function to bring a box to the top
-function bringToTop(box) {
-  const parent = box.parentNode;
-  parent.removeChild(box);
-  insertAfter(box, parent.firstChild); // Insert after the first child
-}
+        function insertAfter(newNode, referenceNode) {
+            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+        }
 
-// Function to bring a specific box to the top when its SVG is filled
-function bringBoxToTop(selectedElement) {
-  const box = selectedElement.closest('.box');
-  const isSVGFilled = selectedElement.querySelector('svg.bi-star-fill');
+        // Function to bring a box element after a sibling element
+        function bringToTop(box, siblingId) {
+            const parent = box.parentNode;
+            const sibling = document.getElementById(siblingId);
+            parent.removeChild(box);
+            insertAfter(box, sibling);
+        }
 
-  if (isSVGFilled) {
-    bringToTop(box);
-  }
-}
+        // Function to bring a specific box to the top when its SVG is filled
+        function bringBoxToTop(selectedElement) {
+            const box = selectedElement.closest('.box');
+            const isSVGFilled = selectedElement.querySelector('svg.bi-star-fill');
 
+            if (isSVGFilled) {
+                bringToTop(box, 'addNewBox');
+            }
+        }
 // Add event listener to each "selected" element
 document.querySelectorAll('.selected').forEach((element) => {
     element.addEventListener('click', (e) => {
@@ -773,7 +802,8 @@ document.querySelectorAll('.selected').forEach((element) => {
     if (key) {
         const backgroundKey = 'star' + key.slice(4);
         localStorage.setItem(backgroundKey,'filled');
-    }
+        }
+        
     if (svgChild && svgChild.classList.contains('bi-star')) {
       // Remove the existing SVG element with "bi-star"
       selectedElement.removeChild(svgChild);
@@ -801,6 +831,7 @@ document.querySelectorAll('.selected').forEach((element) => {
             const backgroundKey = 'star' + key.slice(4);
             localStorage.setItem(backgroundKey, 'filled');
         }
+        location.reload()
     } else if (svgChild && svgChild.classList.contains('bi-star-fill')) {
         // Remove the existing SVG element with "bi-star-fill"
       selectedElement.removeChild(svgChild);
@@ -830,7 +861,9 @@ document.querySelectorAll('.selected').forEach((element) => {
 
           // Now remove the item from localStorage using the backgroundKey
           localStorage.removeItem(backgroundKey);
-      }
+        }
+        location.reload()
+
       // Bring the box to the top if its SVG is filled
       bringBoxToTop(selectedElement);
     }
