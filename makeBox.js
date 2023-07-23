@@ -5,6 +5,7 @@ doneBtn = document.getElementById('doneBtn')
 let index = localStorage.length
 let srcValue
 let customize
+let marked
 let nameSave
 let parentDiv
 let background
@@ -621,24 +622,25 @@ if (localStorage.length > 0) {
             // // Append the new child element after the "addNewBox" sibling
             // insertAfter(newChildElement, addNewBox);
 
-            function insertAfter(newNode, referenceNode) {
-                referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-            }
+            // function insertAfter(newNode, referenceNode) {
+            //     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+            // }
 
-            // Function to bring a box element after a sibling element
-            function bringToTop(box, siblingId) {
-                const sibling = document.getElementById(siblingId);
-                insertAfter(box, sibling);
-            }
+            // // Function to bring a box element after a sibling element
+            // function bringToTop(box, siblingId) {
+            //     const sibling = document.getElementById(siblingId);
+            //     insertAfter(box, sibling);
+            // }
 
-            // Usage example:
-            // Assuming 'box' and 'addNewBox' are already defined.
-            bringToTop(box, 'addNewBox');
+            // // Usage example:
+            // // Assuming 'box' and 'addNewBox' are already defined.
+            // bringToTop(box, 'ma');
 
         
             // Check if the selected element has an SVG child
             // container.appendChild(box)
             console.log(box)
+            markcontainer.appendChild(box)
             boxSpan3.appendChild(svgElement3)
             bringBoxToTop(svgElement3)
 
@@ -670,9 +672,12 @@ if (localStorage.length > 0) {
         
         let boxImg = document.createElement('img')
         boxImg.classList.add('boxImg')
+        boxImg.classList.add('p-3')
         boxImg.src = "https://cutewallpaper.org/24/amazon-png-logo/amazon-icon-png-logo-symbol-black.png"
-        boxImg.setAttribute('height', '100px')
-        boxImg.setAttribute('width', '100px')
+        boxImg.setAttribute('height', '75px')
+        boxImg.setAttribute('width', '75px')
+        boxImg.style.background='rgba(0,0,0,0.3)'
+        boxImg.style.borderRadius='7px'
         let boxA = document.createElement('a')
         boxA.classList.add('boxA')
         // boxA.id = 'boxA' + index

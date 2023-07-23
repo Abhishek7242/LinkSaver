@@ -47,6 +47,12 @@ font-family: 'Roboto Serif',
     min-height: 100vh;
     background-color: #9BA17B;
 }
+#markedContainer{
+    /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
+    width: 100%;
+    min-height: 100vh;
+    background-color: #747956;
+}
 #container #backgroundBox{
     background: url('https://wallpapers.com/images/featured/mix-color-background-r4e9huzf751xgw78.jpg') no-repeat center center/cover;
         overflow: hidden;
@@ -68,6 +74,15 @@ background-color: #61764B;
     overflow: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+.bg-fade-black{
+        width: 248px;
+            position: absolute;
+            left: 46px;
+            top: 36px;
+        border-radius: 9px;
+    background-color: rgba(85, 138, 67, 0.4);
 }
 
 .overflow::-webkit-scrollbar {
@@ -138,6 +153,13 @@ box-shadow: none!important;
     height:300px;
     border-radius: 10px;
 }
+#markcontainer .addBtn{
+    /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important; */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important;
+    width: 250px;
+    height:300px;
+    border-radius: 10px;
+}
 
 #container a{
     border-radius: 10px;
@@ -149,6 +171,23 @@ font-size: larger;
 font-weight: bolder;
 }
 #container .svg{
+    /* z-index: 2; */
+    border-radius: 3px;
+    color: #000;
+    /* background-color: rgba(0, 0, 0,0.3); */
+    /* box-shadow: 0 0rem 1rem rgba(0, 0, 0) !important; */
+    /* box-shadow: 0 1rem 2rem rgb(0, 0, 0) !important; */
+}
+#markcontainer a{
+    border-radius: 10px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .533) !important;
+    /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important; */
+    text-decoration: none;
+    color: #000;
+font-size: larger;
+font-weight: bolder;
+}
+#markcontainer .svg{
     /* z-index: 2; */
     border-radius: 3px;
     color: #000;
