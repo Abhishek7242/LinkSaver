@@ -490,15 +490,10 @@ doneBtn.addEventListener('click', (e) => {
         });
 
 
-        if (urlinput.value.includes('https://') &&urlinput.value.includes('.com/')) {
-
-          
-              urlSave = urlinput.value
-  
-        } else {
-            urlSave= 'https://' + urlinput.value + '.com/';
+   
+            urlSave=  urlinput.value;
  
-        }
+       
 
         nameSave = nameinput.value
 
@@ -684,7 +679,9 @@ if (localStorage.length > 0) {
             const url = 'http://'+inputHTML+'.com/';
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
-         extractedText = url.substring(startIndex, endIndex);
+            extractedText = url.substring(startIndex, endIndex);
+            localStorage.setItem('url'+key.slice(4), url)
+
         }
         
         console.log(extractedText);
