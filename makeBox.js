@@ -605,23 +605,37 @@ if (localStorage.length > 0) {
             
             // bringToTop(box)
             // Function to insert an element after another element
+            // function insertAfter(newNode, referenceNode) {
+            //     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+            // }
+
+            // // Get the container and its first child (addNewBox)
+            // // const container = document.getElementById("container");
+            // const addNewBox = document.getElementById("addNewBox");
+
+            // // Create a new child element to be appended
+            // const newChildElement = box
+            // // newChildElement.textContent = "New Child Element";
+            // // You can customize the newChildElement as per your requirements
+
+            // // Append the new child element after the "addNewBox" sibling
+            // insertAfter(newChildElement, addNewBox);
+
             function insertAfter(newNode, referenceNode) {
                 referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
             }
 
-            // Get the container and its first child (addNewBox)
-            // const container = document.getElementById("container");
-            const addNewBox = document.getElementById("addNewBox");
+            // Function to bring a box element after a sibling element
+            function bringToTop(box, siblingId) {
+                const sibling = document.getElementById(siblingId);
+                insertAfter(box, sibling);
+            }
 
-            // Create a new child element to be appended
-            const newChildElement = box
-            // newChildElement.textContent = "New Child Element";
-            // You can customize the newChildElement as per your requirements
+            // Usage example:
+            // Assuming 'box' and 'addNewBox' are already defined.
+            bringToTop(box, 'addNewBox');
 
-            // Append the new child element after the "addNewBox" sibling
-            insertAfter(newChildElement, addNewBox);
-
-
+        
             // Check if the selected element has an SVG child
             // container.appendChild(box)
             console.log(box)
@@ -676,7 +690,7 @@ if (localStorage.length > 0) {
             const endIndex = url.indexOf('/', startIndex);
              extractedText = url.substring(startIndex, endIndex);
         } else {
-            const url = 'http://'+inputHTML+'.com/';
+            const url = 'https://'+inputHTML+'.com/';
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
