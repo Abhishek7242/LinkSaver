@@ -490,10 +490,17 @@ doneBtn.addEventListener('click', (e) => {
         });
 
 
+        if (urlinput.value.includes('https://') &&urlinput.value.includes('.com/')) {
 
+          
+              urlSave = urlinput.value
+  
+        } else {
+            urlSave= 'https://' + urlinput.value + '.com/';
+ 
+        }
 
         nameSave = nameinput.value
-        urlSave = urlinput.value
 
 
         localStorage.setItem('boxx' + index, box.outerHTML)
@@ -666,11 +673,19 @@ if (localStorage.length > 0) {
         boxA.classList.add('py-2')
         boxA.classList.add('px-4')
         let str = name
-        
-        const url = inputHTML;
-        const startIndex = url.indexOf('.com/') + 5;
-        const endIndex = url.indexOf('/', startIndex);
-        const extractedText = url.substring(startIndex, endIndex);
+        let extractedText
+        if (inputHTML.includes('https://')&&inputHTML.includes('.com/')) {
+            
+            const url = inputHTML;
+            const startIndex = url.indexOf('.com/') + 5;
+            const endIndex = url.indexOf('/', startIndex);
+             extractedText = url.substring(startIndex, endIndex);
+        } else {
+            const url = 'http://'+inputHTML+'.com/';
+            const startIndex = url.indexOf('.com/') + 5;
+            const endIndex = url.indexOf('/', startIndex);
+         extractedText = url.substring(startIndex, endIndex);
+        }
         
         console.log(extractedText);
         function getWebsiteLogo(websiteUrl) {
@@ -1253,6 +1268,7 @@ document.querySelectorAll('.selected').forEach((element) => {
                 localStorage.removeItem('name' + key.slice(4));
                 localStorage.removeItem('url' + key.slice(4));
                 localStorage.removeItem('background' + key.slice(4));
+                localStorage.removeItem('span3' + key.slice(4));
 
                 location.reload()
                 // if (localStorage.length === 0) {
