@@ -11,6 +11,43 @@ let parentDiv
 let background
 inputBox.style.opacity = 1
 doneBtn.addEventListener('click', (e) => {
+    
+    // Function to simulate a double click on a given element
+    function simulateDoubleClick(element) {
+        // Create a new MouseEvent for the 'click' event
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+        });
+
+        // Dispatch the first 'click' event
+        element.dispatchEvent(clickEvent);
+
+        // Dispatch the second 'click' event with a small delay
+        setTimeout(() => {
+            element.dispatchEvent(clickEvent);
+        }, 3); // Adjust the delay as needed (300 milliseconds in this example)
+    }
+
+    // Function to handle the double click event
+    function handleDoubleClick(event) {
+        const targetElement = event.target;
+        simulateDoubleClick(targetElement);
+
+        // Apply styles to the inputBox after double click
+        console.log('running')
+        targetElement.style.width = '20%';
+        targetElement.style.height = '300px';
+        targetElement.style.left = '-100px';
+        targetElement.style.zIndex = '-1';
+        targetElement.style.opacity = '0';
+    }
+
+    // Add event listener to the element with ID 'target' (replace 'target' with your desired element's ID)
+    const targetElement = document.getElementById('container');
+    targetElement.addEventListener('dblclick', handleDoubleClick);
+
     e.preventDefault()
     if (nameinput.value == '' || urlinput.value == '') {
         return
@@ -932,24 +969,24 @@ document.querySelectorAll('.selected').forEach((element) => {
                 makeAllPlays()
                 let mainNavbar = document.getElementById('mainContainer')
                 let boxElements = document.querySelectorAll('.box');
-                
-                boxElements.forEach((box) => {
-                    box.style.width = '0px';
-                    box.style.height = '0px';
-                    box.style.display = 'none';
-                });
+                setTimeout(() => {
+                    boxElements.forEach((box) => {
+                        box.style.cssText = 'display: none !important;';
+                        boxImg.forEach((box) => {
+                       
+                            box.style.display = 'none';
+                        });
+                        let boxA = document.querySelectorAll('.boxA');
+        
+                        boxA.forEach((box) => {
+                       
+                            box.style.display = 'none';
+                        });
+                    });
+                }, 1);
+
                 let boxImg = document.querySelectorAll('.boxImg');
                 
-                boxImg.forEach((box) => {
-               
-                    box.style.display = 'none';
-                });
-                let boxA = document.querySelectorAll('.boxA');
-
-                boxA.forEach((box) => {
-               
-                    box.style.display = 'none';
-                });
 
                 mainNavbar.style.height='100vh'
              
@@ -957,17 +994,18 @@ document.querySelectorAll('.selected').forEach((element) => {
                 let backgroundBoxClasses = ['shadow-lg', 'justify-content-around', 'align-items-center', 'p-3', 'mb-5', 'bg-white', 'rounded', 'addBtn', 'col-3', 'bg-light', 'text-light', 'd-flex', 'm-3', 'my-3', 'pt-5', 'text-dark']
                 let backgroundBoxLogoClasses = ['d-flex', 'align-items-center', 'w-100', 'position-absolute', 'top-0', 'justify-content-between', 'bg-info', 'w-100', 'px-2']
                 let colorBoxClasses = ['d-flex', 'justify-content-start', 'align-items-start', 'mb-5']
-                console.log('runiiing')
+                // console.log('runiiing')
 
                 backgroundBox = document.createElement('div')
                 backgroundBox.id = 'backgroundBox'
                 backgroundBox.classList.add(...backgroundBoxClasses); // Add the classes to the 'div' element
-                setTimeout(() => {
+                // setTimeout(() => {
                     if (isMobileDevice()) {
                         // Code for mobile devices
                         backgroundBox.style.alignSelf = 'center'
                         backgroundBox.style.width = '90%'
                         backgroundBox.style.height = '400px'
+                        backgroundBox.classList.add('mt-4')
                         backgroundBox.style.left = '0px'
                         backgroundBox.style.opacity = 1
                         backgroundBox.style.zIndex = 1
@@ -975,14 +1013,14 @@ document.querySelectorAll('.selected').forEach((element) => {
                     } else {
                         // Code for non-mobile devices
                         // Add/remove classes or apply styles specific to non-mobile devices
-                        backgroundBox.style.alignSelf = 'center'
+                        backgroundBox.style.alignSelf = 'start'
                         backgroundBox.style.width = '50%'
-                        backgroundBox.style.height = '50vh'
+                        backgroundBox.style.height = '420px'
                         backgroundBox.style.left = '400px'
-                        backgroundBox.style.opacity = 1
+                        // backgroundBox.style.opacity = 1
                         backgroundBox.style.zIndex = 1
                     }
-                }, 50)
+                // }, 200)
 
                 let backgroundBoxLogo = document.createElement('div')
                 backgroundBoxLogo.classList.add(...backgroundBoxLogoClasses); // Add the classes to the 'div' element
