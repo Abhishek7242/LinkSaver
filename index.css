@@ -45,24 +45,25 @@ font-family: 'Roboto Serif',
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
     min-height: 100vh;
-    background-color: #9BA17B;
+    background-color: #4f7e5a;
+    /* background-color: #9BA17B; */
 }
 #markedContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
     /* min-height: 0vh; */
-    background-color: #747956;
+    background-color:#70835d ;
 }
 #container #backgroundBox{
     background: url('https://wallpapers.com/images/featured/mix-color-background-r4e9huzf751xgw78.jpg') no-repeat center center/cover;
         overflow: hidden;
         position: absolute;
         z-index: -1;
-        opacity: 0;
+        /* opacity: 0; */
         transition: all 0.5s ease-in-out;
         align-self: center;
-        /* width: 50%; */
-        /* min-height: 50vh; */
+        width: 10%;
+        min-height: 100px;
         left: -400px;
 }
 
@@ -78,11 +79,19 @@ background-color: #61764B;
 
 .bg-fade-black{
         width: 248px;
+        font-weight: bolder;
             position: absolute;
+            /* font-size: 1.7rem; */
             left: 46px;
             top: 36px;
         border-radius: 9px;
-    background-color: rgba(85, 138, 67, 0.4);
+            background-repeat: no-repeat;
+                background-size: cover;
+background-position: center;
+        background-clip:text ;
+        -webkit-background-clip:text ;
+        color: transparent;
+    background-image:url('https://www.schemecolor.com/wallpaper?i=60310&desktop');
 }
 
 .overflow::-webkit-scrollbar {
@@ -162,8 +171,10 @@ box-shadow: none!important;
     border-radius: 10px;
 }
 #addNewBox{
-    /* background-color: rgba(255, 255, 255, 0.444); */
+    background-color: rgba(255, 255, 255, 0.2);
+
 }
+
 #container a{
     border-radius: 10px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .533) !important;
