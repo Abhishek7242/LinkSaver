@@ -11,44 +11,11 @@ let parentDiv
 let background
 inputBox.style.opacity = 1
 doneBtn.addEventListener('click', (e) => {
+    e.preventDefault()
     
     // Function to simulate a double click on a given element
-    function simulateDoubleClick(element) {
-        // Create a new MouseEvent for the 'click' event
-        const clickEvent = new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window,
-        });
+ 
 
-        // Dispatch the first 'click' event
-        element.dispatchEvent(clickEvent);
-
-        // Dispatch the second 'click' event with a small delay
-        setTimeout(() => {
-            element.dispatchEvent(clickEvent);
-        }, 3); // Adjust the delay as needed (300 milliseconds in this example)
-    }
-
-    // Function to handle the double click event
-    function handleDoubleClick(event) {
-        const targetElement = event.target;
-        simulateDoubleClick(targetElement);
-
-        // Apply styles to the inputBox after double click
-        console.log('running')
-        targetElement.style.width = '20%';
-        targetElement.style.height = '300px';
-        targetElement.style.left = '-100px';
-        targetElement.style.zIndex = '-1';
-        targetElement.style.opacity = '0';
-    }
-
-    // Add event listener to the element with ID 'target' (replace 'target' with your desired element's ID)
-    const targetElement = document.getElementById('container');
-    targetElement.addEventListener('dblclick', handleDoubleClick);
-
-    e.preventDefault()
     if (nameinput.value == '' || urlinput.value == '') {
         return
     }
@@ -545,9 +512,8 @@ doneBtn.addEventListener('click', (e) => {
     }
     index++
     setTimeout(() => {
-
         location.reload()
-    }, 310)
+    }, 400)
 
     
 })
@@ -718,28 +684,28 @@ if (localStorage.length > 0) {
         let boxA = document.createElement('a')
         boxA.classList.add('boxA')
         // boxA.id = 'boxA' + index
-        boxA.href = inputHTML
-        boxA.classList.add('text-dark')
-        boxA.classList.add('bg-info')
-        boxA.classList.add('py-2')
-        boxA.classList.add('px-4')
         let str = name
         let extractedText
         if (inputHTML.includes('https://')&&inputHTML.includes('.com/')) {
-            
             const url = inputHTML;
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
              extractedText = url.substring(startIndex, endIndex);
+             boxA.href = url
         } else {
             const url = 'https://'+inputHTML+'.com/';
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
             localStorage.setItem('url'+key.slice(4), url)
+            boxA.href = url
 
         }
-        
+        console.log(boxA.href)
+        boxA.classList.add('text-dark')
+        boxA.classList.add('bg-info')
+        boxA.classList.add('py-2')
+        boxA.classList.add('px-4')
         console.log(extractedText);
         function getWebsiteLogo(websiteUrl) {
             // Construct the favicon URL based on the website URL
