@@ -41,10 +41,16 @@ font-family: 'Roboto Serif',
     box-shadow: 0 0 2rem black;
 
 }
+#mainNavbar #nightMode{
+
+    color: black;
+
+
+}
 #mainContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #4f7e5a;
     background-color: white;
     /* background-color: #9BA17B; */
