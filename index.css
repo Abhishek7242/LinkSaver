@@ -77,6 +77,9 @@ font-family: 'Roboto Serif',
 .right-0{
 right: 0;
 }
+.bi-moon-stars-fill{
+display: none;
+}
 #section1{
 height: 600px;
 background-color: #61764B;

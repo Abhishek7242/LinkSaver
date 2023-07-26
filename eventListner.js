@@ -42,5 +42,31 @@ addNewBox.addEventListener('click', () => {
         inputBox.style.opacity = 0
 
     })
+let nightMode=document.getElementById('nightMode')
+nightMode.addEventListener('click', () => {
 
+
+    let tag = document.querySelector('#nightMode svg')
+    console.log(tag)
+    let moonStarFill = document.querySelector('.bi-moon-stars-fill')
+    let moonStar = document.querySelector('.bi-moon-stars')
+    if (window.getComputedStyle(moonStar).display !== 'none') {
+        moonStar.style.display ='none'
+        moonStarFill.style.display = 'inline'
+        mainContainer.style.background = 'black'
+        markedContainer.style.background = 'black'
+        section1.style.background = 'black'
+        nightMode.style.color = 'white'
+        
+    } else {
+        
+        moonStar.style.display ='inline'
+        moonStarFill.style.display = 'none'
+        mainContainer.style.background = 'white'
+        markedContainer.style.background = 'white'
+        section1.style.background = 'white'
+        nightMode.style.color = 'black'
+    }
     
+
+    })
