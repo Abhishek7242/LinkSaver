@@ -68,7 +68,9 @@ font-family: 'Roboto Serif',
         min-height: 100px;
         left: -400px;
 }
-
+.right-0{
+right: 0;
+}
 #section1{
 height: 600px;
 background-color: #61764B;
