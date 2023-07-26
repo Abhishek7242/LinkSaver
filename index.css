@@ -50,7 +50,7 @@ font-family: 'Roboto Serif',
 #mainContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
-    /* min-height: 100vh; */
+    min-height: 50vh;
     background-color: #4f7e5a;
     background-color: white;
     /* background-color: #9BA17B; */
