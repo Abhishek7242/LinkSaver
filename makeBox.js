@@ -513,7 +513,7 @@ doneBtn.addEventListener('click', (e) => {
     index++
     setTimeout(() => {
         location.reload()
-    }, 400)
+    }, 310)
 
     
 })
@@ -676,9 +676,9 @@ if (localStorage.length > 0) {
         let boxImg = document.createElement('img')
         boxImg.classList.add('boxImg')
         boxImg.classList.add('p-3')
-        boxImg.src = "https://cutewallpaper.org/24/amazon-png-logo/amazon-icon-png-logo-symbol-black.png"
-        boxImg.setAttribute('height', '75px')
-        boxImg.setAttribute('width', '75px')
+        // boxImg.src = "https://cutewallpaper.org/24/amazon-png-logo/amazon-icon-png-logo-symbol-black.png"
+        boxImg.setAttribute('height', '70px')
+        boxImg.setAttribute('width', '70px')
         boxImg.style.background='rgba(0,0,0,0.3)'
         boxImg.style.borderRadius='7px'
         let boxA = document.createElement('a')
@@ -686,27 +686,27 @@ if (localStorage.length > 0) {
         // boxA.id = 'boxA' + index
         let str = name
         let extractedText
-        if (inputHTML.includes('https://')&&inputHTML.includes('.com/')) {
+        if (inputHTML.includes('https://') && inputHTML.includes('.com/')) {
             const url = inputHTML;
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
-             extractedText = url.substring(startIndex, endIndex);
-             boxA.href = url
+            extractedText = url.substring(startIndex, endIndex);
+            boxA.href = url;
+            console.log(boxA.href = url);
         } else {
-            const url = 'https://'+inputHTML+'.com/';
+            let url = 'https://' + encodeURIComponent(inputHTML) + '.com/'; // Encode the inputHTML before appending it to the URL
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
-            localStorage.setItem('url'+key.slice(4), url)
-            boxA.href = url
-
+            localStorage.setItem('url' + key.slice(4), url);
+            boxA.href = url;
         }
+
         console.log(boxA.href)
         boxA.classList.add('text-dark')
         boxA.classList.add('bg-info')
         boxA.classList.add('py-2')
         boxA.classList.add('px-4')
-        console.log(extractedText);
         function getWebsiteLogo(websiteUrl) {
             // Construct the favicon URL based on the website URL
             const faviconUrl = `${websiteUrl}/favicon.ico`;
@@ -724,6 +724,7 @@ if (localStorage.length > 0) {
         // Retrieve logo button click event handler
         
         const websiteUrl = extractedText;
+        console.log(extractedText);
         getWebsiteLogo(websiteUrl);
         boxA.innerText = str[0].toUpperCase() + str.slice(1)
         boxA.setAttribute('role', 'button')

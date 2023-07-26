@@ -45,6 +45,7 @@ font-family: 'Roboto Serif',
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
     min-height: 100vh;
+    background-color: #4f7e5a;
     background-color: white;
     /* background-color: #9BA17B; */
 }
@@ -52,7 +53,8 @@ font-family: 'Roboto Serif',
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
     /* min-height: 0vh; */
-    background-color:white ;
+    background-color:#70835d ;
+    background-color:white;
 }
 #container #backgroundBox{
     background: url('https://wallpapers.com/images/featured/mix-color-background-r4e9huzf751xgw78.jpg') no-repeat center center/cover;
@@ -69,7 +71,8 @@ font-family: 'Roboto Serif',
 
 #section1{
 height: 600px;
-background-color: white;
+background-color: #61764B;
+background-color:white;
 }
 .overflow {
     overflow: scroll;
@@ -171,8 +174,7 @@ box-shadow: none!important;
     border-radius: 10px;
 }
 #addNewBox{
-background-color: rgb(0 0 0 / 47%);
-
+    background-color: rgba(255, 255, 255, 0.2);
 
 }
 
