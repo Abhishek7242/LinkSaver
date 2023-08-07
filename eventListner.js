@@ -67,7 +67,7 @@ if (mode === 'lightmode') {
     section1.style.background = 'white'
     nightMode.style.color = 'black'
     nightModeText.innerText = 'Night mode'
-    box.style.background = 'none'
+    // box.style.backgroundColor = 'none'
 
     let container = document.getElementById('container');
     let addBtns = container.querySelectorAll('.addBtn');
@@ -93,7 +93,7 @@ if (mode === 'lightmode') {
     markedContainer.style.background = 'black'
     section1.style.background = 'black'
     nightMode.style.color = 'white'
-    box.style.background = 'white'
+    // box.style.backgroundColor = 'white'
     nightModeText.innerText = 'Light mode'
 
     let container = document.getElementById('container');
@@ -133,7 +133,7 @@ nightMode.addEventListener('click', () => {
         section1.style.background = 'black'
         nightMode.style.color = 'white'
         nightModeText.innerText='Light mode'
-        box.style.background = 'white'
+        // box.style.backgroundColor = 'white'
 
         let container = document.getElementById('container');
         let addBtns = container.querySelectorAll('.addBtn');
@@ -161,7 +161,7 @@ nightMode.addEventListener('click', () => {
         section1.style.background = 'white'
         nightMode.style.color = 'black'
         nightModeText.innerText = 'Night mode'
-        box.style.background = 'none'
+        // box.style.backgroundColor = 'none'
 
         let container = document.getElementById('container');
         let addBtns = container.querySelectorAll('.addBtn');

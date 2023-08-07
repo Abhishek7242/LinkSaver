@@ -171,11 +171,31 @@ box-shadow: none!important;
     background: url('') no-repeat center center/cover;
 }
 #container .addBtn{
-    box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important;
+    /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important; */
     width: 250px;
     height:300px;
     border-radius: 10px;
+}
+#container .bS{
+    box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important;
+
+}
+#markcontainer .bS{
+    box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important;
+
+}
+#container .bSl{
+    box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
+    box-shadow: 0 1rem 3rem rgba(114, 114, 114, 0.444) !important;
+    box-shadow: 0 0.7rem 3rem rgba(64, 64, 64, 0.5) !important;
+}
+#markcontainer .bSl{
+    box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
+    box-shadow: 0 1rem 3rem rgba(133, 133, 133, 0.444) !important;
+
 }
 #markcontainer .addBtn{
     /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important; */
