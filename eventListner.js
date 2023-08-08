@@ -1,6 +1,9 @@
 let cancelBtn = document.getElementById('cancelBtn')
 let addNewBox = document.getElementById('addNewBox')
 let inputBox = document.getElementById('inputBox')
+let sectioninputBox = document.getElementById('sectioninputBox')
+let newSectionBtn = document.getElementById('newSectionBtn')
+let sectioncancelBtn = document.getElementById('sectioncancelBtn')
 function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
@@ -40,6 +43,39 @@ addNewBox.addEventListener('click', () => {
         inputBox.style.left = '-100px'
         inputBox.style.zIndex = '-1'
         inputBox.style.opacity = 0
+
+    })
+
+newSectionBtn.addEventListener('click', () => {
+    if (isMobileDevice()) {
+        // Code for mobile devices
+        sectionName.value = '';
+        sectioninputBox.style.width = '90%'
+        sectioninputBox.style.height = '400px'
+        sectioninputBox.style.left = '20px'
+        sectioninputBox.style.zIndex = 1
+        sectioninputBox.style.margin='0px!important'
+        
+        sectioninputBox.style.opacity = 1
+        // Add/remove classes or apply styles specific to mobile devices
+    } else {
+        // Code for non-mobile devices
+        // Add/remove classes or apply styles specific to non-mobile devices
+        sectionName.value = '';
+        sectioninputBox.style.width='35%'
+        sectioninputBox.style.height='360px'
+        sectioninputBox.style.left='30vw'
+        sectioninputBox.style.zIndex=1
+        sectioninputBox.style.opacity=1
+    }
+
+})
+    sectioncancelBtn.addEventListener('click', () => {
+        sectioninputBox.style.width = '20%'
+        sectioninputBox.style.height = '300px'
+        sectioninputBox.style.left = '-100px'
+        sectioninputBox.style.zIndex = '-1'
+        sectioninputBox.style.opacity = 0
 
     })
 let moonStarFill = document.querySelector('.bi-brightness-high-fill')

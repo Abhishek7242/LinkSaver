@@ -118,6 +118,35 @@ important web pages again and enjoy a clutter-free browsing experience. Start cu
 
         </div>
     </main>
+    <section id="newSectionContainer" class="d-flex justify-content-center position-relative">
+    
+        <div id="newSectionInnerContainer" class=" row d-flex align-items-start justify-content-cente bg-dange col-11 p-4 mt-5">
+            <div id="newSectionBtn" role="button"
+            class="shadow-lg p-3 mb-5  rounded addBtn col-3 text-light d-flex justify-content-center align-items-center m-3 my-3">
+            <img id="addImg" src="add.png" alt="">
+       
+            <!-- <h4 class="text-color-h text-center">New Section</h4> -->
+            </div>
+            <form id="sectioninputBox"
+                class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
+                <div id="addPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
+            
+                    <h3 id="sectionaddLogo" class="text-dark mx-3">Add Section</h3>
+                </div>
+                <div id="sectionNameBox" class="input my-4 mb-4">
+                    <label role="button" class="text-light" for="sectionName">Name</label>
+            
+                    <input required id="sectionName" class="form-control" aria-label="Sizing example input" type="text">
+                </div>
+            
+                <div class="align-self-end bottom-0 mb-4 position-absolute bottom-0">
+                    <button id="sectioncancelBtn" class="btn btn-outline-danger py-1 px-3">Cancel</button>
+                    <button id="sectiondoneBtn" class="btn btn-info py-1 px-3 mx-3">Done</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
 
 
     <footer id="footer" class="position-relative d-flex align-items-center">
