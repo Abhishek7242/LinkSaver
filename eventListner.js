@@ -5,6 +5,7 @@ let sectioninputBox = document.getElementById('sectioninputBox')
 let newSectionBtn = document.getElementById('newSectionBtn')
 let sectioncancelBtn = document.getElementById('sectioncancelBtn')
 let navLinks = document.getElementById('navLinks')
+let navAddImg = document.getElementById('navaddImg')
 function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
@@ -111,6 +112,8 @@ if (mode === 'lightmode') {
     section1.style.background = 'white'
     nightMode.style.color = 'black'
     nightModeText.innerText = 'Night mode'
+    navAddImg.style.background = 'none'
+
     // box.style.backgroundColor = 'none'
 
     let container = document.getElementById('container');
@@ -137,6 +140,8 @@ if (mode === 'lightmode') {
     markedContainer.style.background = 'black'
     section1.style.background = 'black'
     nightMode.style.color = 'white'
+    navAddImg.style.background = 'white'
+
     // box.style.backgroundColor = 'white'
     nightModeText.innerText = 'Light mode'
 
@@ -176,6 +181,8 @@ nightMode.addEventListener('click', () => {
         markedContainer.style.background = 'black'
         section1.style.background = 'black'
         nightMode.style.color = 'white'
+        navAddImg.style.background = 'white'
+
         nightModeText.innerText='Light mode'
         // box.style.backgroundColor = 'white'
 
@@ -204,6 +211,8 @@ nightMode.addEventListener('click', () => {
         markedContainer.style.background = 'white'
         section1.style.background = 'white'
         nightMode.style.color = 'black'
+        navAddImg.style.background = 'none'
+
         nightModeText.innerText = 'Night mode'
         // box.style.backgroundColor = 'none'
 

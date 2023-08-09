@@ -276,6 +276,14 @@ font-weight: bolder;
     /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important; */
 
 }
+#navaddImg{
+    border-radius: 100px;
+}
+/* #navaddImg:hover{
+    transition: transform 0.4s;
+        transform: rotate(180deg);
+    
+} */
 #container #addImg:hover{
     transition: transform 0.4s ;
 transform: rotate(180deg);
