@@ -189,8 +189,8 @@ box-shadow: none!important;
 #container .addBtn{
     /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important; */
-    width: 150px;
-    height:30px;
+width: 250px;
+    height: 300px;
     border-radius: 10px;
 }
 #container .bS{
