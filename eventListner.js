@@ -4,6 +4,7 @@ let inputBox = document.getElementById('inputBox')
 let sectioninputBox = document.getElementById('sectioninputBox')
 let newSectionBtn = document.getElementById('newSectionBtn')
 let sectioncancelBtn = document.getElementById('sectioncancelBtn')
+let navLinks = document.getElementById('navLinks')
 function isMobileDevice() {
     return /Mobi|Android/i.test(navigator.userAgent);
 }
@@ -39,20 +40,23 @@ addNewBox.addEventListener('click', () => {
 })
     cancelBtn.addEventListener('click', () => {
         inputBox.style.width = '20%'
+
         inputBox.style.height = '300px'
-        inputBox.style.left = '-100px'
+        inputBox.style.right = '200px'
         inputBox.style.zIndex = '-1'
         inputBox.style.opacity = 0
 
     })
 
 newSectionBtn.addEventListener('click', () => {
+    navLinks.classList.remove('show')
     if (isMobileDevice()) {
         // Code for mobile devices
         sectionName.value = '';
         sectioninputBox.style.width = '90%'
+        sectioninputBox.style.top='100px'
         sectioninputBox.style.height = '400px'
-        sectioninputBox.style.left = '20px'
+        sectioninputBox.style.left = '22px'
         sectioninputBox.style.zIndex = 1
         sectioninputBox.style.margin='0px!important'
         
@@ -62,18 +66,22 @@ newSectionBtn.addEventListener('click', () => {
         // Code for non-mobile devices
         // Add/remove classes or apply styles specific to non-mobile devices
         sectionName.value = '';
+        sectioninputBox.style.top = '100px'
+
         sectioninputBox.style.width='35%'
         sectioninputBox.style.height='360px'
-        sectioninputBox.style.left='30vw'
+        sectioninputBox.style.right='30vw'
         sectioninputBox.style.zIndex=1
         sectioninputBox.style.opacity=1
     }
 
 })
     sectioncancelBtn.addEventListener('click', () => {
-        sectioninputBox.style.width = '20%'
-        sectioninputBox.style.height = '300px'
-        sectioninputBox.style.left = '-100px'
+        sectioninputBox.style.width = '12%'
+        sectioninputBox.style.top = '-15px'
+
+        sectioninputBox.style.height = '30px'
+        sectioninputBox.style.right = '200px'
         sectioninputBox.style.zIndex = '-1'
         sectioninputBox.style.opacity = 0
 
