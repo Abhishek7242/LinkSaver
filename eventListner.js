@@ -69,9 +69,9 @@ newSectionBtn.addEventListener('click', () => {
         sectionName.value = '';
         sectioninputBox.style.top = '100px'
 
-        sectioninputBox.style.width='35%'
-        sectioninputBox.style.height='360px'
-        sectioninputBox.style.right='30vw'
+        sectioninputBox.style.width='30%'
+        sectioninputBox.style.height='300px'
+        sectioninputBox.style.right='31vw'
         sectioninputBox.style.zIndex=1
         sectioninputBox.style.opacity=1
     }
@@ -139,8 +139,8 @@ if (mode === 'lightmode') {
     mainContainer.style.background = 'black'
     markedContainer.style.background = 'black'
     section1.style.background = 'black'
-    nightMode.style.color = 'white'
-    navAddImg.style.background = 'white'
+    nightMode.style.color = '#fed494'
+    navAddImg.style.background = '#fed494'
 
     // box.style.backgroundColor = 'white'
     nightModeText.innerText = 'Light mode'
@@ -180,8 +180,8 @@ nightMode.addEventListener('click', () => {
         mainContainer.style.background = 'black'
         markedContainer.style.background = 'black'
         section1.style.background = 'black'
-        nightMode.style.color = 'white'
-        navAddImg.style.background = 'white'
+        nightMode.style.color = '#fed494'
+        navAddImg.style.background = '#fed494'
 
         nightModeText.innerText='Light mode'
         // box.style.backgroundColor = 'white'

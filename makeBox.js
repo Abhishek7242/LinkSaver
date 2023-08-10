@@ -1,6 +1,6 @@
 let boxClasses = ['position-relative', 'flex-column', 'shadow-lg', 'p-3', 'mb-5', 'rounded', 'bS', 'addBtn', 'col-3', 'text-light', 'd-flex', 'justify-content-around', 'align-items-center', 'm-3', 'my-3']
 let nameinput = document.getElementById('nameInput')
-let sectionName= document.getElementById('sectionName')
+// let sectionName= document.getElementById('sectionName')
 let urlinput = document.getElementById('urlInput')
 doneBtn = document.getElementById('doneBtn')
 let index = localStorage.length

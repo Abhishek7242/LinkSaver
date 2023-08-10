@@ -20,14 +20,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
              
-                      
+            <form id="sectioninputBox"
+                class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
+                <div id="sectionaddPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
+            
+                    <h3 id="sectionaddLogo" class="text-dark mx-3">Add Section</h3>
+                </div>
+                <div id="sectionNameBox" class="input my-4 mb-4">
+                    <label role="button" class="text-light h5" for="sectionName">Name</label>
+            
+                    <input required id="sectionName" class="form-control" aria-label="Sizing example input" type="text">
+                </div>
+            
+                <div class="align-self-end bottom-0 mb-4 position-absolute bottom-0">
+                    <button id="sectioncancelBtn" class="btn btn-outline-danger py-1 px-3">Cancel</button>
+                    <button id="sectiondoneBtn" class="btn btn-info py-1 px-3 mx-3">Done</button>
+                </div>
+            </form>
                        
                 
             <div class=" collapse navbar-collapse position-relative justify-content-end" id="navLinks">
                 <div id="newSectionBtn" role="button"
-                    class="shadow-lg  rounded addBtn  text-light d-flex justify-content-cente align-items-center m-3 mx-lg-1 my-2">
+                    class="shadw-lg  rounded   text-light d-flex justify-content-cente align-items-center m-3 mx-lg-1 my-2">
                     <img id="navaddImg" src="add.png" alt="" width="20px">
-                    <h6 class="m-0 mx-1">New Section</h6>
+                    <h6 class="m-0 mx-1 text-light-color">New Section</h6>
                 
                     <!-- <h4 class="text-color-h text-center">New Section</h4> -->
                 </div>
@@ -44,7 +60,7 @@
                     viewBox="0 0 16 16">
                     <path
                         d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-                </svg><span id="nightModeText">Night Mode</span></button>
+                </svg><span id="nightModeText" class="font-family">Night Mode</span></button>
                     </li>
                     <!-- <li class="nav-item">
                         <a href="#" class="nav-link">Recipes</a>
@@ -72,6 +88,9 @@ important web pages again and enjoy a clutter-free browsing experience. Start cu
         <div id="markcontainer" class=" row d-flex align-items-start justify-content-center bg-dange col-11 p-4 mt-5">
          <div class="text-color-h bg-fade-black">Favourite List</div>
             </div></section>
+
+
+
     <main id="mainContainer" class="d-flex justify-content-center ">
         <div id="container" class=" row d-flex align-items-start justify-content-center bg-dange col-11 p-4 mt-5">
             <div id="addNewBox" role="button"
@@ -79,23 +98,11 @@ important web pages again and enjoy a clutter-free browsing experience. Start cu
                 class="shadow-lg p-3 mb-5  rounded addBtn col-3 text-light d-flex justify-content-center align-items-center m-3 my-3">
                 <img id="addImg" src="add.png" alt="">
             </div>
-<form id="sectioninputBox"
-    class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
-    <div id="addPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
 
-        <h3 id="sectionaddLogo" class="text-dark mx-3">Add Section</h3>
-    </div>
-    <div id="sectionNameBox" class="input my-4 mb-4">
-        <label role="button" class="text-light" for="sectionName">Name</label>
+<!-- add section forn end here  -->
 
-        <input required id="sectionName" class="form-control" aria-label="Sizing example input" type="text">
-    </div>
 
-    <div class="align-self-end bottom-0 mb-4 position-absolute bottom-0">
-        <button id="sectioncancelBtn" class="btn btn-outline-danger py-1 px-3">Cancel</button>
-        <button id="sectiondoneBtn" class="btn btn-info py-1 px-3 mx-3">Done</button>
-    </div>
-</form>
+
             <form id="inputBox"
                 class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
                 <div id="addPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
@@ -145,12 +152,12 @@ important web pages again and enjoy a clutter-free browsing experience. Start cu
 
         </div>
     </main>
-    <section id="newSectionContainer" class="d-flex justify-content-center position-relative">
+    <section id="newSectionContainer" class="d-flex justify-content-center position-relative flex-column">
     
-        <div id="newSectionInnerContainer" class=" row d-flex align-items-start justify-content-cente bg-dange col-11 p-4 mt-5">
+        <!-- <div id="newSectionInnerContainer" class=" row d-flex align-items-start justify-content-cente bg-dange col-11 p-4 mt-5">
      
 
-        </div>
+        </div> -->
     </section>
 
 
