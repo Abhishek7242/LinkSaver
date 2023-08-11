@@ -10,7 +10,7 @@ let marked
 let nameSave
 let parentDiv
 let background
-inputBox.style.opacity = 1
+// inputBox.style.opacity = 1
 doneBtn.addEventListener('click', (e) => {
     e.preventDefault()
     

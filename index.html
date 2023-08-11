@@ -19,7 +19,27 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-             
+            <form id="inputBox"
+                class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
+                <div id="addPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
+            
+                    <h3 id="addLogo" class="text-dark mx-3">Add</h3>
+                </div>
+                <div id="nameBox" class="input my-4 mb-4">
+                    <label role="button" class="text-light h6" for="nameInput">Name</label>
+            
+                    <input required id="nameInput" class="form-control" aria-label="Sizing example input" type="text">
+                </div>
+                <div id="urlBox" class="input">
+                    <label role="button" class="text-light h6" for="urlInput">Url</label>
+                    <input required id="urlInput" class="form-control" aria-label="Sizing example input" type="text">
+                </div>
+                <div class="align-self-end bottom-0 mb-4 position-absolute bottom-0">
+                    <button id="cancelBtn" class="btn btn-outline-danger py-1 px-3">Cancel</button>
+                    <button id="doneBtn" class="btn btn-info py-1 px-3 mx-3">Done</button>
+                </div>
+            </form>
+
             <form id="sectioninputBox"
                 class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
                 <div id="sectionaddPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
@@ -93,6 +113,7 @@ important web pages again and enjoy a clutter-free browsing experience. Start cu
 
     <main id="mainContainer" class="d-flex justify-content-center ">
         <div id="container" class=" row d-flex align-items-start justify-content-center bg-dange col-11 p-4 mt-5">
+           
             <div id="addNewBox" role="button"
 
                 class="shadow-lg p-3 mb-5  rounded addBtn col-3 text-light d-flex justify-content-center align-items-center m-3 my-3">
@@ -101,28 +122,6 @@ important web pages again and enjoy a clutter-free browsing experience. Start cu
 
 <!-- add section forn end here  -->
 
-
-
-            <form id="inputBox"
-                class="shadow-lg flex-column justify-content-cente p-3 mb-5 bg-white rounded addBtn col-3 bg-light text-light d-flex my-3 pt-5">
-                <div id="addPage" class=" position-absolute top-0 w-100 d-flex align-items-center">
-
-                    <h3 id="addLogo" class="text-dark mx-3">Add</h3>
-                </div>
-                <div id="nameBox" class="input my-4 mb-4">
-                    <label role="button" class="text-light" for="nameInput">Name</label>
-
-                    <input required id="nameInput" class="form-control" aria-label="Sizing example input" type="text">
-                </div>
-                <div id="urlBox" class="input">
-                    <label role="button" class="text-light" for="urlInput">Url</label>
-                    <input required id="urlInput" class="form-control" aria-label="Sizing example input" type="text">
-                </div>
-                <div class="align-self-end bottom-0 mb-4 position-absolute bottom-0">
-                    <button id="cancelBtn" class="btn btn-outline-danger py-1 px-3">Cancel</button>
-                    <button id="doneBtn" class="btn btn-info py-1 px-3 mx-3">Done</button>
-                </div>
-            </form>
 
 
             <!-- 
