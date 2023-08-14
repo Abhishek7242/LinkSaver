@@ -582,7 +582,7 @@ if (localStorage.length > 0) {
         mode = sessionStorage.getItem('mode')
 
         let back
-        if (mode === 'lightmode') {
+        if (mode === 'lightmode'|| !mode) {
             back= ''
         }
         else {
