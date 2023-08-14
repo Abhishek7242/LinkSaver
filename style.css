@@ -332,7 +332,12 @@ font-weight: bolder;
     color: wheat;
 }
 .sectionList h5:hover{
- background-color: #949494;
+    background-color: #4f4f4f;
+}
+.sectionList h5{
+    padding: 4px 2px;
+    margin-bottom: 2px;
+    background-color: #949494;
 }
 
 .input{
