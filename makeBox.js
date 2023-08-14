@@ -16,6 +16,36 @@ let parentDiv
 let background
 
 // inputBox.style.opacity = 1
+addNewBox.addEventListener('click', () => {
+    if (isMobileDevice()) {
+        // Code for mobile devices
+        urlinput.value = '';
+        nameinput.value = '';
+        inputBox.style.width = '90%'
+        inputBox.style.height = '400px'
+        inputBox.style.left = '20px'
+        inputBox.style.zIndex = 1
+        inputBox.style.top = '100px'
+
+        inputBox.style.margin = '0px!important'
+
+        inputBox.style.opacity = 1
+        // Add/remove classes or apply styles specific to mobile devices
+    } else {
+        // Code for non-mobile devices
+        // Add/remove classes or apply styles specific to non-mobile devices
+        urlinput.value = '';
+        nameinput.value = '';
+        inputBox.style.width = '35%'
+        inputBox.style.top = '100px'
+
+        inputBox.style.height = '360px'
+        inputBox.style.left = '30vw'
+        inputBox.style.zIndex = 1
+        inputBox.style.opacity = 1
+    }
+
+
 doneBtn.addEventListener('click', (e) => {
     console.log('done button running from make box')
     e.preventDefault()
@@ -523,7 +553,7 @@ doneBtn.addEventListener('click', (e) => {
 
     
 })
-
+})
 
 addNewBox = document.getElementById('addNewBox');
 parentDiv = document.getElementById('container');

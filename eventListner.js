@@ -55,6 +55,8 @@ addNewBox.addEventListener('click', () => {
     })
 
 newSectionBtn.addEventListener('click', () => {
+    sectionList.style.display = 'block'
+
     navLinks.classList.remove('show')
     if (isMobileDevice()) {
         // Code for mobile devices
@@ -82,7 +84,9 @@ newSectionBtn.addEventListener('click', () => {
     }
 
 })
-    sectioncancelBtn.addEventListener('click', () => {
+sectioncancelBtn.addEventListener('click', () => {
+    sectionList.style.display = 'none'
+
         sectioninputBox.style.width = '12%'
         sectioninputBox.style.top = '-15px'
 
@@ -195,76 +199,76 @@ nightMode.addEventListener('click', () => {
     let moonStarFill = document.querySelector('.bi-brightness-high-fill')
     let moonStar = document.querySelector('.bi-moon-stars')
     if (window.getComputedStyle(moonStar).display !== 'none'||mode==='lightmode') {
-        moonStar.style.display ='none'
-        moonStarFill.style.display = 'inline'
-        mainContainer.style.background = '#010026'
-        markedContainer.style.background = '#010026'
-        section1.style.background = '#010026'
+        // moonStar.style.display ='none'
+        // moonStarFill.style.display = 'inline'
+        // mainContainer.style.background = '#010026'
+        // markedContainer.style.background = '#010026'
+        // section1.style.background = '#010026'
       
-        nightMode.style.color = '#fed494'
-        navAddImg.style.background = '#fed494'
+        // nightMode.style.color = '#fed494'
+        // navAddImg.style.background = '#fed494'
 
-        // nightModeText.innerText='Light mode'
-        // box.style.backgroundColor = 'white'
+        // // nightModeText.innerText='Light mode'
+        // // box.style.backgroundColor = 'white'
 
-        let container = document.getElementById('container');
-        let addBtns = container.querySelectorAll('.addBtn');
-        let markcontainer = document.getElementById('markcontainer');
-        let addBtns2 = markcontainer.querySelectorAll('.addBtn');
+        // let container = document.getElementById('container');
+        // let addBtns = container.querySelectorAll('.addBtn');
+        // let markcontainer = document.getElementById('markcontainer');
+        // let addBtns2 = markcontainer.querySelectorAll('.addBtn');
 
-        // Convert NodeList to an array and then use forEach
-        Array.from(addBtns).forEach(function (addBtn) {
-            // addBtn.classList.add('bSl')
-            addBtn.classList.add('nightMode')
-            addBtn.classList.remove('lightMode')
+        // // Convert NodeList to an array and then use forEach
+        // Array.from(addBtns).forEach(function (addBtn) {
+        //     // addBtn.classList.add('bSl')
+        //     addBtn.classList.add('nightMode')
+        //     addBtn.classList.remove('lightMode')
 
-            // addBtn.classList.remove('bS')
-        });
+        //     // addBtn.classList.remove('bS')
+        // });
 
-        Array.from(addBtns2).forEach(function (addBtn) {
-            // addBtn.classList.add('bSl')
-            addBtn.classList.add('nightMode')
-            addBtn.classList.remove('lightMode')
+        // Array.from(addBtns2).forEach(function (addBtn) {
+        //     // addBtn.classList.add('bSl')
+        //     addBtn.classList.add('nightMode')
+        //     addBtn.classList.remove('lightMode')
 
-            // addBtn.classList.remove('bS')
-        });
+        //     // addBtn.classList.remove('bS')
+        // });
 
         sessionStorage.setItem('mode','nightmode')
     } else {
         
-        moonStar.style.display ='inline'
-        moonStarFill.style.display = 'none'
-        mainContainer.style.background = 'white'
-        markedContainer.style.background = 'white'
-        section1.style.background = 'white'
-        nightMode.style.color = 'black'
-        navAddImg.style.background = 'none'
+        // moonStar.style.display ='inline'
+        // moonStarFill.style.display = 'none'
+        // mainContainer.style.background = 'white'
+        // markedContainer.style.background = 'white'
+        // section1.style.background = 'white'
+        // nightMode.style.color = 'black'
+        // navAddImg.style.background = 'none'
 
-        // nightModeText.innerText = 'Night mode'
-        // box.style.backgroundColor = 'none'
+        // // nightModeText.innerText = 'Night mode'
+        // // box.style.backgroundColor = 'none'
 
-        let container = document.getElementById('container');
-        let addBtns = container.querySelectorAll('.addBtn');
-        let markcontainer = document.getElementById('markcontainer');
-        let addBtns2 = markcontainer.querySelectorAll('.addBtn');
+        // let container = document.getElementById('container');
+        // let addBtns = container.querySelectorAll('.addBtn');
+        // let markcontainer = document.getElementById('markcontainer');
+        // let addBtns2 = markcontainer.querySelectorAll('.addBtn');
 
-        // Convert NodeList to an array and then use forEach
-        Array.from(addBtns).forEach(function (addBtn) {
-            // addBtn.classList.add('bS')
-            addBtn.classList.add('lightMode')
-            addBtn.classList.remove('nightMode')
+        // // Convert NodeList to an array and then use forEach
+        // Array.from(addBtns).forEach(function (addBtn) {
+        //     // addBtn.classList.add('bS')
+        //     addBtn.classList.add('lightMode')
+        //     addBtn.classList.remove('nightMode')
 
-            // addBtn.classList.remove('bSl')
-        });
+        //     // addBtn.classList.remove('bSl')
+        // });
 
-        Array.from(addBtns2).forEach(function (addBtn) {
-            // addBtn.classList.add('bS')
-            addBtn.classList.add('lightMode')
-            addBtn.classList.remove('nightMode')
+        // Array.from(addBtns2).forEach(function (addBtn) {
+        //     // addBtn.classList.add('bS')
+        //     addBtn.classList.add('lightMode')
+        //     addBtn.classList.remove('nightMode')
 
 
-            // addBtn.classList.remove('bSl')
-        });
+        //     // addBtn.classList.remove('bSl')
+        // });
         sessionStorage.setItem('mode', 'lightmode')
 
     }
