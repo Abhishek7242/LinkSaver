@@ -2,6 +2,10 @@ let boxClasses = ['position-relative', 'flex-column', 'shadow-lg', 'p-3', 'mb-5'
 let nameinput = document.getElementById('nameInput')
 // let sectionName= document.getElementById('sectionName')
 let urlinput = document.getElementById('urlInput')
+
+
+
+
 doneBtn = document.getElementById('doneBtn')
 let index = localStorage.length
 let srcValue
@@ -10,8 +14,10 @@ let marked
 let nameSave
 let parentDiv
 let background
+
 // inputBox.style.opacity = 1
 doneBtn.addEventListener('click', (e) => {
+    console.log('done button running from make box')
     e.preventDefault()
     
     // Function to simulate a double click on a given element
@@ -503,7 +509,6 @@ doneBtn.addEventListener('click', (e) => {
 
         nameSave = nameinput.value
 
-
         localStorage.setItem('boxx' + index, box.outerHTML)
         // localStorage.setItem('boxSpan' + index, boxSpan.outerHTML)
         localStorage.setItem('name' + index, nameSave)
@@ -544,10 +549,24 @@ if (localStorage.length > 0) {
         box.classList.add('box')
         box.classList.add(...boxClasses)
         box.dataset.key = key;
+        mode = sessionStorage.getItem('mode')
+
+        let back
+        if (mode === 'lightmode') {
+            back= ''
+        }
+        else {
+            back = '#3d0000'
+        }
         if (background&&background.startsWith('#')) {
             box.style.background = `${background}`;
             
-        } else {
+        }
+        else if (background === 'undefined') {
+            box.style.background = `${back}`;
+            
+        }
+        else {
 
             box.style.background = `url('${background}') no-repeat center center / cover`;
         }
@@ -654,7 +673,7 @@ if (localStorage.length > 0) {
             // Bring the box to the top if its SVG is filled
             // bringBoxToTop(selectedElement);
         } else {
-            console.log('span')
+            // console.log('span')
    
             const svgNS3 = 'http://www.w3.org/2000/svg';
              svgElement3 = document.createElementNS(svgNS3, 'svg');
@@ -693,7 +712,7 @@ if (localStorage.length > 0) {
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
             boxA.href = url;
-            console.log(boxA.href = url);
+            // console.log(boxA.href = url);
         } else {
             let url = 'https://' + encodeURIComponent(inputHTML) + '.com/'; // Encode the inputHTML before appending it to the URL
             const startIndex = url.indexOf('.com/') + 5;
@@ -703,7 +722,7 @@ if (localStorage.length > 0) {
             boxA.href = url;
         }
 
-        console.log(boxA.href)
+        // console.log(boxA.href)
         boxA.classList.add('text-dark')
         boxA.classList.add('bg-info')
         boxA.classList.add('py-2')
@@ -725,7 +744,7 @@ if (localStorage.length > 0) {
         // Retrieve logo button click event handler
         
         const websiteUrl = extractedText;
-        console.log(extractedText);
+        // console.log(extractedText);
         getWebsiteLogo(websiteUrl);
         boxA.innerText = str[0].toUpperCase() + str.slice(1)
         boxA.setAttribute('role', 'button')

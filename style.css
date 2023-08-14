@@ -81,6 +81,13 @@ font-family: 'Roboto Serif',
         min-height: 100px;
         left: -400px;
 }
+.nightMode{
+    background-color: #130081;
+    background-color: #3d0000;
+}
+.lightMode{
+    background-color: transparent;
+}
 .right-0{
 right: 0;
 }
@@ -140,6 +147,21 @@ left: -100px;
 transition: all 0.3s ease-in-out;
 
 }
+ .inputBox{
+    background: url('https://cutewallpaper.org/34/dusty-blue-solid-hd-wallpaper/723631840.jpg') no-repeat center center/cover;
+    overflow: hidden;
+    position: absolute;
+z-index: -1;
+opacity: 0;
+/* margin-bottom: 300px!important; */
+    align-self: end;
+    /* top: 0; */
+    width: 20%;
+  height: 300px;
+left: -100px;
+transition: all 0.3s ease-in-out;
+
+}
 #sectioninputBox{
     background: url('https://media.istockphoto.com/id/1435226158/photo/circuit-board-background-computer-data-technology-artificial-intelligence.jpg?b=1&s=612x612&w=0&k=20&c=I8gIoXrpraVvPfQJ8NN3-kJKOP4yWw3FLNIsXo1dwks=') no-repeat center center/cover;
     overflow: hidden;
@@ -181,6 +203,13 @@ transition: all 0.4s ease-in-out;
     /* border-top-left-radius: 9px; */
     /* border-top-right-radius: 9px; */
 }
+.addPage{
+  
+    left: 0;
+    background: linear-gradient(90deg,rgb(105, 255, 253),rgb(70, 159, 255),rgb(38, 0, 228));
+    /* border-top-left-radius: 9px; */
+    /* border-top-right-radius: 9px; */
+}
 #sectionaddPage{
   
     left: 0;
@@ -208,6 +237,13 @@ width: 250px;
     border-radius: 10px;
 }
 .addBtn{
+    /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important; */
+width: 250px;
+    height: 300px;
+    border-radius: 10px;
+}
+.mainAddBtn{
     /* box-shadow: 0 1rem 3rem rgb(0, 0, 0) !important;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .444) !important; */
 width: 250px;
@@ -371,6 +407,7 @@ transform: rotate(180deg);
     font-weight: 100;
     font-size: 4rem;
 }
+
 
 .navbar.scrolled {
 
