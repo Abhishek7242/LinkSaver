@@ -319,12 +319,13 @@ font-weight: bolder;
 
 #newSectionBtn{
     /* height: 300px; */
-    width: 125px;
+    width: 165px;
 }
 .sectionList{
     display: none;
-    padding-top: 42px!important;
-    top: -5px;
+    /* padding-top: 42px!important; */
+    top: 55px;
+    left: 66px;
     /* height: 300px; */
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .533) !important;
     border-radius: 5px;
@@ -483,6 +484,18 @@ transform: rotate(180deg);
         margin: 0;
         padding: 0.2rem !important;
     }
+        #newSectionBtn {
+            width: 195px;
+            display: flex !important;
+            flex-direction: column;
+        }
+                .sectionList {
+               position: relative!important;
+                    top: 0px;
+                    width: 100%;
+                    left: 0px;
+             
+                }
     #footer #a0{
     font-size: 0.6rem;
     }
