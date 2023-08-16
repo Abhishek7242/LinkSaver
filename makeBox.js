@@ -6,7 +6,7 @@ let urlinput = document.getElementById('urlInput')
 
 
 
-doneBtn = document.getElementById('doneBtn')
+let doneBtn = document.getElementById('doneBtn')
 let index = localStorage.length
 let srcValue
 let customize
@@ -17,34 +17,7 @@ let background
 
 // inputBox.style.opacity = 1
 addNewBox.addEventListener('click', () => {
-    if (isMobileDevice()) {
-        // Code for mobile devices
-        urlinput.value = '';
-        nameinput.value = '';
-        inputBox.style.width = '90%'
-        inputBox.style.height = '400px'
-        inputBox.style.left = '20px'
-        inputBox.style.zIndex = 1
-        inputBox.style.top = '100px'
-
-        inputBox.style.margin = '0px!important'
-
-        inputBox.style.opacity = 1
-        // Add/remove classes or apply styles specific to mobile devices
-    } else {
-        // Code for non-mobile devices
-        // Add/remove classes or apply styles specific to non-mobile devices
-        urlinput.value = '';
-        nameinput.value = '';
-        inputBox.style.width = '35%'
-        inputBox.style.top = '100px'
-
-        inputBox.style.height = '360px'
-        inputBox.style.left = '30vw'
-        inputBox.style.zIndex = 1
-        inputBox.style.opacity = 1
-    }
-
+    checkMobile(inputBox)
 
     doneBtn.addEventListener('click', (e) => {
         console.log('done button running from make box')
@@ -180,11 +153,8 @@ addNewBox.addEventListener('click', () => {
             box.appendChild(boxSpan3)
             boxSpan2.appendChild(svgElement2)
 
-            inputBox.style.width = '20%'
-            inputBox.style.height = '300px'
-            inputBox.style.left = '-100px'
-            inputBox.style.zIndex = '-1'
-            inputBox.style.opacity = 0
+            hideTheInputPage(inputBox)
+
 
 
             // customize = document.getElementById('customize' + index)
