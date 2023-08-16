@@ -1,5 +1,7 @@
 let sectiondoneBtn = document.getElementById('sectiondoneBtn')
+let newSectionButton  = document.getElementById('newSectionButton')
 let sectionName = document.getElementById('sectionName')
+let downBtn = document.getElementById('downBtn')
 let sectionValue
 let addBtnDivId
 let parent
@@ -64,8 +66,8 @@ let checkMobile = (inputBox) => {
     //     inputBox.style.opacity = 1
     // }
 }
-sectiondoneBtn.addEventListener('click', (e) => {
-    sectionList.style.display = 'none'
+newSectionButton.addEventListener('click', (e) => {
+    // sectionList.style.display = 'none'
     
     // Function to simulate a double click on a given element
     e.preventDefault()
@@ -83,6 +85,7 @@ sectiondoneBtn.addEventListener('click', (e) => {
         sectioninputBox.style.right = '200px'
         sectioninputBox.style.zIndex = '-1'
         sectioninputBox.style.opacity = 0
+
         let sectionListH5 = document.createElement('h5')
         // sectionListH5.classList.add('mx-5')
         sectionListH5.innerText = sectionValue
@@ -154,54 +157,62 @@ sectiondoneBtn.addEventListener('click', (e) => {
 
 
  
+
+if (localStorage.length > 0) {
+    let storedKeys = Object.keys(localStorage).filter((key) => key.startsWith('sect'));
     
-    if (localStorage.length > 0) {
-        let storedKeys = Object.keys(localStorage).filter((key) => key.startsWith('sect'));
+    // Sort the stored keys based on index
+    storedKeys.sort((a, b) => {
+        let indexA = parseInt(a.slice(4));
+        let indexB = parseInt(b.slice(4));
+        return indexA - indexB;
+    });
+    storedKeys.forEach((key) => {
+        let formHTML = localStorage.getItem(key);
+        let sectionName = localStorage.getItem('sectionName' + key.slice(4));
+        console.log(sectionName)
+        let sectionListH5 = document.createElement('h5')
+        // sectionListH5.classList.add('mx-5')
+        sectionListH5.innerText = sectionName
+        sectionListH5.id=sectionName
+        let h2 = document.createElement('h2')
+        h2.classList.add('mx-5')
+        h2.innerText = sectionName
+        let div = document.createElement('div')
+        div.classList.add('w-100')
+        div.id = sectionName
+        let addBtnDiv = document.createElement('div')
+        addBtnDiv.id = sectionName + 'addBtn'
         
-        // Sort the stored keys based on index
-        storedKeys.sort((a, b) => {
-            let indexA = parseInt(a.slice(4));
-            let indexB = parseInt(b.slice(4));
-            return indexA - indexB;
-        });
-        storedKeys.forEach((key) => {
-            let formHTML = localStorage.getItem(key);
-            let sectionName = localStorage.getItem('sectionName' + key.slice(4));
-            console.log(sectionName)
-            let sectionListH5 = document.createElement('h5')
-            // sectionListH5.classList.add('mx-5')
-            sectionListH5.innerText = sectionName
-            let h2 = document.createElement('h2')
-            h2.classList.add('mx-5')
-            h2.innerText = sectionName
-            let div = document.createElement('div')
-            div.classList.add('w-100')
-            div.id = sectionName
-            let addBtnDiv = document.createElement('div')
-            addBtnDiv.id = sectionName + 'addBtn'
-            
-            addBtnDiv.classList.add(...addImgBoxClasses);
-            let addBtnImg = document.createElement('img')
-            addBtnImg.src = 'add.png'
-            if (sectionName === null) {
-                return
-            }
-            else if (sectionName == 'undefined') {
-                return
-            }
-            else {
-            sectionList.appendChild(sectionListH5)
-            
-            // newSectionContainer.appendChild(div)
-            // div.appendChild(h2)
-            // div.appendChild(addBtnDiv)
-            // addBtnDiv.appendChild(addBtnImg)
-        }
-//         let addBtnDivId = document.getElementById(addBtnDiv.id)
-//         let parent = document.getElementById(sectionName)
-//             console.log(addBtnDivId)
-//             addBtnDivId.addEventListener('click', () => {
-// sectionList.style.display='block'
+                addBtnDiv.classList.add(...addImgBoxClasses);
+                let addBtnImg = document.createElement('img')
+                addBtnImg.src = 'add.png'
+                if (sectionName === null) {
+                    return
+                }
+                else if (sectionName == 'undefined') {
+                    return
+                }
+                else {
+                    sectionList.appendChild(sectionListH5)
+                    let click = document.getElementById(sectionName)
+                    click.addEventListener('click', () => {
+                        console.log(sectionName)
+                    })
+                    // newSectionContainer.appendChild(div)
+                    // div.appendChild(h2)
+                    // div.appendChild(addBtnDiv)
+                    // addBtnDiv.appendChild(addBtnImg)
+                }
+           
+                    
+                   
+                
+                //         let addBtnDivId = document.getElementById(addBtnDiv.id)
+                //         let parent = document.getElementById(sectionName)
+                //             console.log(addBtnDivId)
+                //             addBtnDivId.addEventListener('click', () => {
+                    // sectionList.style.display='block'
        
 
 //             checkMobile(inputBox)

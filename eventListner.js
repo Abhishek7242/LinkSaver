@@ -53,9 +53,27 @@ addNewBox.addEventListener('click', () => {
         inputBox.style.opacity = 0
 
     })
+let isTrue = false
+downBtn.addEventListener('click', () => {
+    if (isTrue == false) {
 
-newSectionBtn.addEventListener('click', () => {
-    sectionList.style.display = 'block'
+        sectionList.style.display = 'block'
+
+        downBtn.style.transform = 'rotate(180deg)'
+
+        isTrue = true
+    } else {
+        downBtn.style.transform = 'rotate(0deg)'
+        sectionList.style.display = 'none'
+        isTrue = false
+
+    }
+
+})
+newSectionButton.addEventListener('click', () => {
+    downBtn.style.transform = 'rotate(0deg)'
+    sectionList.style.display = 'none'
+    isTrue = false
 
     navLinks.classList.remove('show')
     if (isMobileDevice()) {
@@ -85,7 +103,6 @@ newSectionBtn.addEventListener('click', () => {
 
 })
 sectioncancelBtn.addEventListener('click', () => {
-    sectionList.style.display = 'none'
 
         sectioninputBox.style.width = '12%'
         sectioninputBox.style.top = '-15px'
@@ -270,7 +287,7 @@ nightMode.addEventListener('click', () => {
         //     // addBtn.classList.remove('bSl')
         // });
         sessionStorage.setItem('mode', 'lightmode')
-
+        
     }
     location.reload()
 
