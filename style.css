@@ -501,7 +501,7 @@ transform: rotate(180deg);
         padding: 0.2rem !important;
     }
         #newSectionBtn {
-            width: 195px;
+            width: 344px;
             display: flex !important;
             flex-direction: column;
         }
@@ -509,7 +509,8 @@ transform: rotate(180deg);
                position: relative!important;
                     top: 0px;
                     width: 100%;
-                    left: 0px;
+                    left: 15px;
+            box-shadow: none !important;
              
                 }
                 .sectionListName{
