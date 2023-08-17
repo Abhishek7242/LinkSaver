@@ -335,7 +335,7 @@ font-weight: bolder;
 
 #newSectionBtn{
     /* height: 300px; */
-    width: 165px;
+    width: 175px;
 }
 .sectionList{
     display: none;
@@ -485,7 +485,7 @@ transform: rotate(180deg);
     }
 }
 
-@media (max-width:900px) {
+@media (max-width:767px) {
     #info{
         width: 100%;
 
@@ -501,7 +501,7 @@ transform: rotate(180deg);
         padding: 0.2rem !important;
     }
         #newSectionBtn {
-            width: 344px;
+        width: 100%;
             display: flex !important;
             flex-direction: column;
         }
@@ -509,7 +509,8 @@ transform: rotate(180deg);
                position: relative!important;
                     top: 0px;
                     width: 100%;
-                    left: 15px;
+                    left: 0px;
+                    padding: 0px 15px;
             box-shadow: none !important;
              
                 }
