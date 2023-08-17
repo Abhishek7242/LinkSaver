@@ -372,6 +372,296 @@ if (localStorage.length > 0) {
 
 
 
+
+
+                            Array.from(document.getElementsByClassName('customize')).forEach((element) => {
+
+                                let backgroundBoxSpan = document.getElementById('cancelBackground')
+
+                                // 
+
+
+
+                                element.addEventListener('click', (ele) => {
+
+                                    let backgroundBox = document.getElementById('backgroundBox')
+                                    const makeAllPlays = () => {
+                                        Array.from(document.getElementsByClassName('themeselect')).forEach((element) => {
+
+
+                                            backgroundBox.remove();
+
+                                        })
+                                    }
+                                    makeAllPlays()
+                                    let mainNavbar = document.getElementById('mainContainer')
+                                    let boxElements = document.querySelectorAll('.box');
+                                    setTimeout(() => {
+                                        boxElements.forEach((box) => {
+                                            box.style.cssText = 'display: none !important;';
+                                            boxImg.forEach((box) => {
+
+                                                box.style.display = 'none';
+                                            });
+                                            let boxA = document.querySelectorAll('.boxA');
+
+                                            boxA.forEach((box) => {
+
+                                                box.style.display = 'none';
+                                            });
+                                        });
+                                    }, 1);
+
+                                    let boxImg = document.querySelectorAll('.boxImg');
+
+
+                                    mainNavbar.style.height = '100vh'
+
+
+                                    let backgroundBoxClasses = ['shadow-lg', 'justify-content-around', 'align-items-center', 'p-3', 'mb-5', 'bg-white', 'rounded', 'addBtn', 'col-3', 'bg-light', 'text-light', 'd-flex', 'm-3', 'my-3', 'pt-5', 'text-dark']
+                                    let backgroundBoxLogoClasses = ['d-flex', 'align-items-center', 'w-100', 'position-absolute', 'top-0', 'justify-content-between', 'bg-info', 'w-100', 'px-2']
+                                    let colorBoxClasses = ['d-flex', 'justify-content-start', 'align-items-start', 'mb-5']
+                                    // console.log('runiiing')
+
+                                    backgroundBox = document.createElement('div')
+                                    backgroundBox.id = 'backgroundBox'
+                                    backgroundBox.classList.add(...backgroundBoxClasses); // Add the classes to the 'div' element
+                                    // setTimeout(() => {
+                                    if (isMobileDevice()) {
+                                        // Code for mobile devices
+                                        backgroundBox.style.alignSelf = 'center'
+                                        backgroundBox.style.width = '90%'
+                                        backgroundBox.style.height = '400px'
+                                        backgroundBox.classList.add('mt-4')
+                                        backgroundBox.style.left = '0px'
+                                        backgroundBox.style.opacity = 1
+                                        backgroundBox.style.zIndex = 1
+                                        // Add/remove classes or apply styles specific to mobile devices
+                                    } else {
+                                        // Code for non-mobile devices
+                                        // Add/remove classes or apply styles specific to non-mobile devices
+                                        backgroundBox.style.alignSelf = 'start'
+                                        backgroundBox.style.width = '50%'
+                                        backgroundBox.style.height = '420px'
+                                        backgroundBox.style.left = '400px'
+                                        // backgroundBox.style.opacity = 1
+                                        backgroundBox.style.zIndex = 1
+                                    }
+                                    // }, 200)
+
+                                    let backgroundBoxLogo = document.createElement('div')
+                                    backgroundBoxLogo.classList.add(...backgroundBoxLogoClasses); // Add the classes to the 'div' element
+
+                                    let backgroundBoxH4 = document.createElement('h4')
+                                    backgroundBoxH4.innerText = 'Choose Background'
+                                    backgroundBoxH4.classList.add('d-inline'); // Add the classes to the 'div' element
+
+                                    let backgroundBoxSpan = document.createElement('span')
+                                    backgroundBoxSpan.id = 'cancelBackground'
+                                    backgroundBoxSpan.role = 'button'
+                                    const svgMarkup = `
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+</svg>
+`;
+
+                                    const svgNS = 'http://www.w3.org/2000/svg';
+                                    const svgElement = document.createElementNS(svgNS, 'svg');
+                                    svgElement.innerHTML = svgMarkup.trim();
+
+                                    svgElement.setAttribute('width', '16');
+                                    svgElement.setAttribute('height', '16');
+                                    svgElement.setAttribute('viewBox', '0 0 16 16');
+
+                                    const pathElement = svgElement.querySelector('path');
+
+                                    // Now you can append the svgElement and pathElement to the desired container
+                                    // For example:
+
+                                    let colorAndThemeBox = document.createElement('div')
+                                    colorAndThemeBox.classList.add('w-100')
+
+                                    let colorBox = document.createElement('div')
+                                    colorBox.classList.add(...colorBoxClasses); // Add the classes to the 'div' element
+
+                                    let colorPickerLable = document.createElement('lable')
+                                    colorPickerLable.setAttribute('for', 'colorPicker')
+                                    colorPickerLable.innerText = 'Choose Color'
+
+                                    let colorPicker = document.createElement('input')
+                                    colorPicker.setAttribute('type', 'color')
+                                    colorPicker.id = 'colorPicker'
+                                    colorPicker.classList.add('mx-2')
+
+                                    let themeBox = document.createElement('div')
+                                    themeBoxLable = document.createElement('lable')
+                                    themeBoxLable.innerText = 'Coose Theme'
+
+                                    let theme1box = document.createElement('div')
+                                    theme1box.classList.add('d-flex')
+                                    theme1box.classList.add('justify-content-start')
+                                    theme1box.classList.add('overflow')
+
+
+                                    // container.appendChild(backgroundBox)
+                                    let h2Element = document.querySelector('.sectionListName');
+                                    h2Element.parentNode.insertBefore(backgroundBox, h2Element.nextSibling);
+                                    backgroundBox.appendChild(backgroundBoxLogo)
+                                    backgroundBoxLogo.appendChild(backgroundBoxH4)
+                                    backgroundBoxLogo.appendChild(backgroundBoxSpan)
+                                    backgroundBoxSpan.appendChild(svgElement);
+                                    backgroundBox.appendChild(colorAndThemeBox)
+                                    colorAndThemeBox.appendChild(colorBox)
+                                    colorBox.appendChild(colorPickerLable)
+                                    colorBox.appendChild(colorPicker)
+                                    colorAndThemeBox.appendChild(themeBox)
+                                    themeBox.appendChild(themeBoxLable)
+                                    let themeBoxArray = [
+                                        { url: 'https://c4.wallpaperflare.com/wallpaper/987/319/586/windows-11-dark-theme-silk-hd-wallpaper-preview.jpg', name: 'Window' },
+                                        { url: 'https://wallpaperaccess.com/full/7053055.jpg', name: 'Cosmic' },
+                                        { url: 'https://getwallpapers.com/wallpaper/full/4/1/a/1192720-desktop-wallpaper-space-theme-1920x1080-full-hd.jpg', name: 'Earth' },
+                                        { url: 'https://freerangestock.com/sample/51754/blue-background-indicates-swirling-bubble-and-twist.jpg', name: 'Bubble' },
+                                        { url: 'https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/b1/58/26/b15826f6-c8ec-4017-e293-50052d6b00df/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg', name: 'Color' },
+                                        { url: 'https://e0.pxfuel.com/wallpapers/239/996/desktop-wallpaper-40-best-finest-apple-for-and-for-your-mobile-tablet-explore-apple-laptop-mac-computer-apple-apple-background-macbook.jpg', name: 'Apple' },
+                                        { url: 'https://images.pling.com/cache/400x400/img/00/00/70/79/44/2015869/seaside-resort-01.jpg', name: 'Nature' }
+                                    ]
+
+                                    let themeiboxh6
+                                    let themeiinnerboxSpanImg
+                                    let themeiinnerboxSpan
+                                    let themeiinnerbox
+                                    for (let i = 0; i < themeBoxArray.length; i++) {
+                                        themeiinnerbox = document.createElement('div')
+                                        themeiinnerbox.classList.add('d-flex')
+                                        themeiinnerbox.classList.add('flex-column')
+                                        themeiinnerbox.classList.add('justify-content-center')
+                                        themeiinnerbox.classList.add('mx-2')
+                                        themeiinnerbox.classList.add('align-items-center')
+
+                                        themeiinnerboxSpan = document.createElement('span')
+                                        themeiinnerboxSpan.classList.add('themeselect')
+                                        themeiinnerboxSpan.classList.add('rounded-circle')
+                                        themeiinnerboxSpan.classList.add('theme')
+
+                                        themeiinnerboxSpanImg = document.createElement('img')
+                                        themeiinnerboxSpanImg.src = themeBoxArray[i].url
+                                        // console.log(themeBoxArray[i].url)
+                                        // console.log(ele.target)
+
+                                        themeiinnerboxSpanImg.setAttribute('height', '90px')
+                                        themeiboxh6 = document.createElement('h6')
+                                        themeiboxh6.innerText = themeBoxArray[i].name
+                                        themeBox.appendChild(theme1box)
+                                        theme1box.appendChild(themeiinnerbox)
+                                        themeiinnerbox.appendChild(themeiinnerboxSpan)
+                                        themeiinnerboxSpan.appendChild(themeiinnerboxSpanImg)
+                                        themeiinnerbox.appendChild(themeiboxh6)
+
+                                    }
+                                    const makeAllPlays0 = () => {
+                                        Array.from(document.getElementsByClassName('themeselect')).forEach((element) => {
+                                            element.classList.remove('borderTheme');
+
+                                        })
+                                    }
+                                    function findParentWithClass(element, className) {
+                                        let parent = element.parentNode;
+                                        while (parent !== null) {
+                                            if (parent.classList && parent.classList.contains(className)) {
+                                                console.log(parent)
+                                                return parent;
+                                            }
+                                            parent = parent.parentNode;
+                                        }
+                                        return null; // If no parent with the class is found
+                                    }
+                                    function getKey(element, className) {
+                                        let parent = element.parentNode;
+                                        while (parent !== null) {
+                                            if (parent.classList && parent.classList.contains(className)) {
+                                                return parent.getAttribute('key');
+                                            }
+                                            parent = parent.parentNode;
+                                        }
+                                        return null; // If no parent with the class is found
+                                    }
+                                    function getLocalStorageKey(element) {
+                                        let parent = element.parentNode;
+                                        while (parent !== null) {
+                                            if (parent.dataset.key) {
+                                                return parent.dataset.key;
+                                            }
+                                            parent = parent.parentNode;
+                                        }
+                                        return null;
+                                    }
+
+                                    Array.from(document.getElementsByClassName('themeselect')).forEach((element) => {
+                                        element.addEventListener('click', (e) => {
+                                            makeAllPlays0();
+                                            e.target.parentNode.classList.add('borderTheme');
+                                            let srcValue = e.target.src;
+                                            let box = findParentWithClass(ele.target, 'box');
+                                            let key = box.getAttribute('data-key');
+                                            console.log(key);
+
+                                            box.style.backgroundImage = `url('${srcValue}')`;
+
+                                            // Update the background value in localStorage
+                                            if (key) {
+                                                const backgroundKey = sectionName+'background' + boxkey.slice(keyValue);
+                                                localStorage.setItem(backgroundKey, srcValue);
+                                            }
+
+                                            box.style.backgroundRepeat = 'no-repeat';
+                                            box.style.backgroundPosition = 'center center';
+                                            box.style.backgroundSize = 'cover';
+                                        });
+                                    });
+
+                                    backgroundBoxSpan.addEventListener('click', () => {
+                                        backgroundBox.style.alignSelf = ''
+                                        backgroundBox.style.width = ''
+                                        backgroundBox.style.height = ''
+                                        backgroundBox.style.left = '-400px'
+                                        backgroundBox.style.opacity = 0
+                                        backgroundBox.style.zIndex = 1
+                                        setTimeout(() => {
+
+                                            backgroundBox.remove();
+                                            location.reload()
+                                        }, 1000)
+                                    })
+                                    colorPicker = document.getElementById('colorPicker');
+                                    console.log(colorPicker)
+                                    colorPicker.addEventListener('change', () => {
+                                        makeAllPlays0();
+
+                                        // form.style.background = colorPicker.value
+                                        let box = findParentWithClass(ele.target, 'box');
+                                        let key = box.getAttribute('data-key');
+
+                                        console.log(box);
+
+                                        box.style.background = colorPicker.value;
+                                        if (key) {
+                                            const backgroundKey = sectionName+'background' + boxkey.slice(keyValue);
+                                            localStorage.setItem(backgroundKey, colorPicker.value);
+                                        }
+
+
+                                    });
+
+
+                                    // else {
+                                    // backgroundBox.remove();
+
+                                    // }
+                                })
+                            })
+
+
+
                             boxSpan2.addEventListener('click', () => {
                                 console.log('running')
                                 let buttonContainer = boxSpan2.querySelector('.buttonContainer');
