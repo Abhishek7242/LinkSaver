@@ -486,6 +486,10 @@ transform: rotate(180deg);
 }
 
 @media (max-width:767px) {
+    .nav-li-nightmodeBtn{
+        display: flex;
+        justify-content: end;
+    }
     #info{
         width: 100%;
 
