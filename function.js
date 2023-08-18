@@ -3,9 +3,9 @@ let checkMobile = (inputBox) => {
         // Code for mobile devices
         urlinput.value = '';
         nameinput.value = '';
-        inputBox.style.width = '90%'
-        inputBox.style.height = '400px'
-        inputBox.style.left = '20px'
+        inputBox.style.width = '79%'
+        inputBox.style.height = '340px'
+        inputBox.style.left = '40px'
         inputBox.style.zIndex = 1
         inputBox.style.top = '100px'
 
