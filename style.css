@@ -36,7 +36,7 @@ font-family: 'Roboto Serif',
     
 }
 .text-color{
-    color: #CFB997;
+    color: #fed494;
 }
 .text-color-h{
     color: #fed494;
@@ -89,7 +89,7 @@ font-family: 'Roboto Serif',
   .text-3d {
       /* font-size: 3em;
       color: #333; */
-      font-weight: bold;
+      /* font-weight: bold; */
       position: relative;
       display: inline-block;
       /* text-transform: uppercase; */
@@ -101,9 +101,9 @@ font-family: 'Roboto Serif',
       content: attr(data-text);
       position: absolute;
       top: 0;
-      left: 0;
+      left: 0px;
       z-index: -1;
-      transform: translateZ(-6px);
+      transform: translate(1px);
       /* Adjust this value to control the depth */
       color: #000000;
       /* Adjust this color as desired */
