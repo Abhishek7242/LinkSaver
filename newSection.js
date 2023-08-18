@@ -1,6 +1,7 @@
 let sectiondoneBtn = document.getElementById('sectiondoneBtn')
 let newSectionButton  = document.getElementById('newSectionButton')
 let sectionName = document.getElementById('sectionName')
+let sectionListHome = document.getElementById('sectionListHome')
 let downBtn = document.getElementById('downBtn')
 let sectionValue
 let addBtnDivId
@@ -65,7 +66,11 @@ newSectionButton.addEventListener('click', () => {
             // console.log(addBtnDivId)
             console.log(index)
             localStorage.setItem('sect' + index, sectionList.outerHTML)
-            localStorage.setItem('sectionName' + index, sectionValue)
+        localStorage.setItem('sectionName' + index, sectionValue)
+        hideChildElements('mainContainer')
+        // container.style.display = 'none';
+        // container.style.setProperty('display', 'none', 'important');
+        sessionStorage.setItem(sectionValue+'Container', 'flex')
             // sectioncancelBtn.addEventListener('click', () => {
                 
             //     form.style.width = '20%'
@@ -158,37 +163,120 @@ if (localStorage.length > 0) {
                 }
                 else {
                     sectionList.appendChild(sectionListH5)
-                    let click = document.getElementById(sectionName)
-                    click.addEventListener('click', (e) => {
-                        
-                        markedContainer.style.display='none'
-                        markedContainer.style.setProperty('display', 'none', 'important');
-                        let container = document.getElementById('container');
+                    let container = document.getElementById('container');
+           
+
                         let mainContainer = document.getElementById('mainContainer');
-                        mainContainer.removeChild(mainContainer.lastChild);
-                        container.style.display = 'none';
-                        container.style.setProperty('display', 'none', 'important');
+                        // mainContainer.removeChild(mainContainer.lastChild);
+                      
                         let container1 = document.createElement('div')
-                        container1.id = e.target.id + 'Container'
+                        container1.id = sectionName + 'Container'
                         container1.classList.add('row')
                         container1.classList.add('d-flex')
                         container1.classList.add('mt-5')
                         container1.classList.add('p-4')
                         container1.classList.add('align-items-start')
                         container1.classList.add('bg-dange')
+                        container1.classList.add('d-none')
                         container1.classList.add('justify-content-center')
                         container1.classList.add('col-11')
                         mainContainer.appendChild(container1)
                         // container1.appendChild(div)
                         container1.appendChild(h2)
                         container1.appendChild(addBtnDiv)
-                        addBtnDiv.appendChild(addBtnImg)
+                    addBtnDiv.appendChild(addBtnImg)
+                    let getTarget
+                    let targetId = sectionName + 'Container'
+                    let getContainer = sessionStorage.getItem('container')
+                    if (getContainer===null) {
+                        sessionStorage.setItem('container', 'flex')
+                        
+                    }
+                    let getTargetFronSession = sessionStorage.getItem(targetId)
+                    let all= sessionStorage.getItem(sectionName + 'Container')
+                    
+                    if (getContainer === 'none') {
+                        markedContainer.style.display = 'none'
+                        markedContainer.style.setProperty('display', 'none', 'important');
+                        container.style.display = 'none';
+                        container.style.setProperty('display', 'none', 'important');
+                        sessionStorage.setItem('container', 'none')
+                        
+                    }
+                    else {
+                        hideChildElements('mainContainer')
+                        let eTarget = document.getElementById(sectionName)
+                        eTarget.style.background = '#949494'
+                        sectionListHome.style.background = '#4f4f4f'
+                        markedContainer.style.display = 'flex'
+                        markedContainer.style.setProperty('display', 'flex', 'important');
+                        container.style.display = 'flex';
+                        container.style.setProperty('display', 'flex', 'important');
+                       sessionStorage.setItem('container', 'flex')
+                       
+                    }
+                    let id 
+                    if (getTargetFronSession==='flex'){
+                         id = sectionName + 'Container'
+                        let eTarget = document.getElementById(sectionName)
+                        eTarget.style.background = '#4f4f4f'
+                        let getTarget = document.getElementById(id)
+                        console.log(getTarget)
+                        hideChildElements('mainContainer')
+                         getTarget.style.display = 'flex'
+                         getTarget.style.setProperty('display', 'flex', 'important');
+                         sessionStorage.setItem(id, 'flex')
+                    }
 
+                    // hideChildElements('mainContainer')
+
+
+                    sectionListHome.addEventListener('click', (e) => {
+                        let targetId = sectionName + 'Container'
+                            let getTarget = document.getElementById(targetId)
+                            getTarget.style.display = 'none'
+                            getTarget.style.setProperty('display', 'none', 'important');
+    
+                            markedContainer.style.display = 'flex'
+                            markedContainer.style.setProperty('display', 'flex', 'important');
+                            container.style.display = 'flex';
+                            container.style.setProperty('display', 'flex', 'important');
+                            sessionStorage.setItem('container', 'flex')
+                            sessionStorage.setItem(targetId, 'none')
+                            location.reload()
+                            
+                        })
+
+                            let click = document.getElementById(sectionName)
+                            click.addEventListener('click', (e) => {
+                                
+                                let targetId = e.target.id + 'Container'
+                                console.log(e.target.id)
+                            
+                                let getTarget = document.getElementById(targetId)
+                                markedContainer.style.display = 'none'
+                                markedContainer.style.setProperty('display', 'none', 'important');
+                                container.style.display = 'none';
+                                container.style.setProperty('display', 'none', 'important');
+                            
+                                hideChildElements('mainContainer')
+                                getTarget.style.display = 'flex'
+                                getTarget.style.setProperty('display', 'flex', 'important');
+                                
+                                // sessionStorage.setItem(hideChildElements('mainContainer'),'none')
+                                sessionStorage.setItem('container', 'none')
+                                sessionStorage.setItem(targetId, 'flex')
+                                location.reload()
+                            })
                         let storedKeys = Object.keys(localStorage).filter((boxkey) => boxkey.startsWith(sectionName+'box'));
 
                         // Sort the stored keys based on index
                         let keyValue = sectionName.length + 3
-                        console.log(keyValue)
+                    console.log(keyValue)
+                    
+
+
+
                         storedKeys.sort((a, b) => {
                             let indexA = parseInt(a.slice(keyValue));
                             let indexB = parseInt(b.slice(keyValue));
@@ -356,9 +444,13 @@ if (localStorage.length > 0) {
 
                             svgElement2.appendChild(pathElement2);
 
-                           
-                            let h2Element = document.querySelector('.sectionListName');
+                            let parentDiv = document.getElementById(sectionName+'Container'); // Replace 'parentDiv' with the actual ID of the parent div
+
+                            // Set other properties for the 'box' element
+
+                            let h2Element = parentDiv.querySelector('.sectionListName'); // Query the h2 element within the parent div
                             h2Element.parentNode.insertBefore(box, h2Element.nextSibling);
+                        
                             box.appendChild(boxSpan)
                             boxSpan.appendChild(svgElement)
                             svgElement3.appendChild(pathElement3);
@@ -374,7 +466,7 @@ if (localStorage.length > 0) {
 
 
 
-                            Array.from(document.getElementsByClassName('customize')).forEach((element) => {
+                            Array.from(parentDiv.getElementsByClassName('customize')).forEach((element) => {
 
                                 let backgroundBoxSpan = document.getElementById('cancelBackground')
 
@@ -426,7 +518,7 @@ if (localStorage.length > 0) {
                                     backgroundBox = document.createElement('div')
                                     backgroundBox.id = 'backgroundBox'
                                     backgroundBox.classList.add(...backgroundBoxClasses); // Add the classes to the 'div' element
-                                    // setTimeout(() => {
+                                    setTimeout(() => {
                                     if (isMobileDevice()) {
                                         // Code for mobile devices
                                         backgroundBox.style.alignSelf = 'center'
@@ -447,7 +539,7 @@ if (localStorage.length > 0) {
                                         // backgroundBox.style.opacity = 1
                                         backgroundBox.style.zIndex = 1
                                     }
-                                    // }, 200)
+                                    }, 200)
 
                                     let backgroundBoxLogo = document.createElement('div')
                                     backgroundBoxLogo.classList.add(...backgroundBoxLogoClasses); // Add the classes to the 'div' element
@@ -504,8 +596,11 @@ if (localStorage.length > 0) {
 
 
                                     // container.appendChild(backgroundBox)
-                                    let h2Element = document.querySelector('.sectionListName');
-                                    h2Element.parentNode.insertBefore(backgroundBox, h2Element.nextSibling);
+                                    let parentDiv = document.getElementById(sectionName + 'Container');
+                                    // console.log(parentDiv)
+                                    parentDiv.appendChild(backgroundBox)
+                                    // let h2Element = parentDiv.querySelector('.sectionListName');
+                                    // h2Element.parentNode.insertBefore(backgroundBox, h2Element.nextSibling);
                                     backgroundBox.appendChild(backgroundBoxLogo)
                                     backgroundBoxLogo.appendChild(backgroundBoxH4)
                                     backgroundBoxLogo.appendChild(backgroundBoxSpan)
@@ -609,7 +704,7 @@ if (localStorage.length > 0) {
 
                                             // Update the background value in localStorage
                                             if (key) {
-                                                const backgroundKey = sectionName+'background' + boxkey.slice(keyValue);
+                                                const backgroundKey = sectionName+'background' + key.slice(keyValue);
                                                 localStorage.setItem(backgroundKey, srcValue);
                                             }
 
@@ -777,8 +872,8 @@ console.log(boxAppended)
                                                 // let key = box.dataset.key;
                                                 const key = box.getAttribute('key');
                                                 
-                                                
-                                                let h2Element = document.querySelector('.sectionListName');
+                                                let parentDiv = document.getElementById(sectionName + 'Container');
+                                                let h2Element = parentDiv.querySelector('.sectionListName');
                                                 h2Element.parentNode.insertBefore(box, h2Element.nextSibling);
                                                 
                                                 boxAppended = true;
@@ -800,6 +895,9 @@ console.log(boxAppended)
                                             localStorage.setItem(sectionName+'url' + index, urlSave)
                                             localStorage.setItem(sectionName+'background' + index, background)
                                             // localStorage.setItem(sectionName+'span' + index, boxSpan3.outerHTML)
+                                            setTimeout(() => {
+                                                location.reload()
+                                            }, 310)
                                         });
 
 
@@ -811,7 +909,6 @@ console.log(boxAppended)
                                     })
 
                       
-                    })
                 }
            
                     

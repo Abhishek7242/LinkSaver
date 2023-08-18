@@ -38,6 +38,29 @@ function hideTheInputPage(inputBox) {
     inputBox.style.zIndex = '-1';
     inputBox.style.opacity = 0;
 }
+function hideChildElements(parentDivId) {
+    let parentDiv = document.getElementById(parentDivId);
+
+    if (parentDiv) {
+        let childElements = parentDiv.children;
+
+        for (let i = 0; i < childElements.length; i++) {
+            let child = childElements[i];
+            child.style.display = 'none'; // Hide the child element
+            child.style.setProperty('display', 'none', 'important');
+            sessionStorage.setItem(child.id, 'none')
+            
+            console.log("Hiding child with ID:", child.id);
+        }
+    } else {
+        console.error("Parent div not found.");
+    }
+}
+
+// Example usage:
+
+
+// Example usage:
 
 // Example usage:
 
