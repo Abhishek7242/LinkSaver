@@ -29,12 +29,7 @@ background-color: #FFFDD0!important;
 .text-light-color{
     color: #fed494;
 }
-#mainNavbar .navbar-brand {
-font-family: 'Roboto Serif',
-        serif;
-    color: #fed494;
-    
-}
+
 .text-color{
     color: #fed494;
 }
@@ -48,12 +43,7 @@ font-family: 'Roboto Serif',
     box-shadow: 0 0 2rem black;
 
 }
-#mainNavbar #nightMode{
 
-    color: black;
-
-
-}
 #mainContainer{
     /* https: //bestideadiy.com/wp-content/uploads/2023/06/social-media-social-keyboard-icon.jpg */
     width: 100%;
@@ -328,12 +318,21 @@ font-weight: bolder;
 }
 #container .svg{
     /* z-index: 2; */
-    border-radius: 3px;
+    /* border-radius: 3px; */
     color: #000;
     /* background-color: rgba(0, 0, 0,0.3); */
     /* box-shadow: 0 0rem 1rem rgba(0, 0, 0) !important; */
     /* box-shadow: 0 1rem 2rem rgb(0, 0, 0) !important; */
 }
+
+.customize{
+    display: none;
+        background-color: #ffffff63;
+            border-radius: 100px;
+            padding: 4px 9px;
+                box-shadow: 0 0 20px #00000057;
+}
+
 
 
 .dotSvg{
@@ -374,7 +373,7 @@ font-weight: bolder;
     color: wheat;
 }
 .sectionList h5:hover{
-    background-color: #4f4f4f;
+    background-color: #4f4f4f!important;
 }
 .sectionList h5{
     padding: 4px 2px;

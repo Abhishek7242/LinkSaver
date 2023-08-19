@@ -175,11 +175,13 @@ if (localStorage.length > 0) {
                         container1.classList.add('d-flex')
                         container1.classList.add('mt-5')
                         container1.classList.add('p-4')
+                        container1.classList.add('p-lg-0')
                         container1.classList.add('align-items-start')
                         container1.classList.add('bg-dange')
                         container1.classList.add('d-none')
                         container1.classList.add('justify-content-center')
                         container1.classList.add('col-11')
+                        container1.classList.add('col-lg-12')
                         mainContainer.appendChild(container1)
                         // container1.appendChild(div)
                         container1.appendChild(h2)
@@ -462,7 +464,53 @@ if (localStorage.length > 0) {
                             box.appendChild(boxSpan2)
                             boxSpan2.appendChild(svgElement2)
 
+                            Array.from(parentDiv.getElementsByClassName('box')).forEach((element) => {
 
+
+                                // 
+
+
+
+                                element.addEventListener('mouseover', (e) => {
+                                    // Assuming you have an event object 'e'
+                                    // You want to target a child element with class 'customize' and set its display property to 'inline'
+
+                                    // Get the parent element from the event target
+                                    const parentElement = e.target;
+
+                                    // Use querySelector to select the child element with class 'customize'
+                                    const customizeElement = parentElement.querySelector('.customize');
+
+                                    // Check if the element with class 'customize' was found
+                                    if (customizeElement) {
+                                        // Modify the CSS style of the element to set its display property to 'inline'
+                                        customizeElement.style.display = 'inline';
+                                    }
+
+                                })
+
+
+
+                                element.addEventListener('mouseleave', (e) => {
+                                    // Assuming you have an event object 'e'
+                                    // You want to target a child element with class 'customize' and set its display property to 'inline'
+
+                                    // Get the parent element from the event target
+                                    const parentElement = e.target;
+
+                                    // Use querySelector to select the child element with class 'customize'
+                                    const customizeElement = parentElement.querySelector('.customize');
+
+                                    // Check if the element with class 'customize' was found
+                                    if (customizeElement) {
+                                        // Modify the CSS style of the element to set its display property to 'inline'
+                                        customizeElement.style.display = 'none';
+                                    }
+
+                                })
+
+
+                            })
 
 
 
@@ -872,9 +920,9 @@ console.log(boxAppended)
                                                 // let key = box.dataset.key;
                                                 const key = box.getAttribute('key');
                                                 
-                                                let parentDiv = document.getElementById(sectionName + 'Container');
-                                                let h2Element = parentDiv.querySelector('.sectionListName');
-                                                h2Element.parentNode.insertBefore(box, h2Element.nextSibling);
+                                                // let parentDiv = document.getElementById(sectionName + 'Container');
+                                                // let h2Element = parentDiv.querySelector('.sectionListName');
+                                                // h2Element.parentNode.insertBefore(box, h2Element.nextSibling);
                                                 
                                                 boxAppended = true;
                                                 index = localStorage.length

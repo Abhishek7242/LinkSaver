@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;1,600&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;1,600&family=Roboto+Serif:ital,wght@1,700&family=Ubuntu&display=swap');
+
+/* font-family: 'Nunito',
+sans-serif;
+font-family: 'Ubuntu',
+sans-serif; */
+/* 
+font-family: 'Roboto Serif',
+serif; */
+
+* {
+
+
+    margin: 0;
+    padding: 0;
+}
+
+#mainNavbar .navbar-brand {
+    font-family: 'Roboto Serif',
+        serif;
+    color: #fed494;
+
+}
+
+#mainNavbar #nightMode {
+
+    color: black;
+
+
+}
+
