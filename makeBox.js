@@ -666,6 +666,54 @@ if (localStorage.length > 0) {
             markcontainer.appendChild(box)
             boxSpan3.appendChild(svgElement3)
             bringBoxToTop(svgElement3)
+           
+            Array.from(markcontainer.getElementsByClassName('box')).forEach((element) => {
+
+
+                // 
+
+
+
+                element.addEventListener('mouseover', (e) => {
+                    // Assuming you have an event object 'e'
+                    // You want to target a child element with class 'customize' and set its display property to 'inline'
+
+                    // Get the parent element from the event target
+                    const parentElement = e.target;
+
+                    // Use querySelector to select the child element with class 'customize'
+                    const customizeElement = parentElement.querySelector('.customize');
+
+                    // Check if the element with class 'customize' was found
+                    if (customizeElement) {
+                        // Modify the CSS style of the element to set its display property to 'inline'
+                        customizeElement.style.display = 'inline';
+                    }
+
+                })
+
+
+
+                element.addEventListener('mouseleave', (e) => {
+                    // Assuming you have an event object 'e'
+                    // You want to target a child element with class 'customize' and set its display property to 'inline'
+
+                    // Get the parent element from the event target
+                    const parentElement = e.target;
+
+                    // Use querySelector to select the child element with class 'customize'
+                    const customizeElement = parentElement.querySelector('.customize');
+
+                    // Check if the element with class 'customize' was found
+                    if (customizeElement) {
+                        // Modify the CSS style of the element to set its display property to 'inline'
+                        customizeElement.style.display = 'none';
+                    }
+
+                })
+
+
+            })
 
             // Append the new filled SVG element to the "selected" element
             // selectedElement.appendChild(svgElement);
