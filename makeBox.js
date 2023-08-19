@@ -1078,7 +1078,10 @@ if (localStorage.length > 0) {
                     { url: 'https://c4.wallpaperflare.com/wallpaper/987/319/586/windows-11-dark-theme-silk-hd-wallpaper-preview.jpg', name: 'Window' },
                     { url: 'https://wallpaperaccess.com/full/7053055.jpg', name: 'Cosmic' },
                     { url: 'https://getwallpapers.com/wallpaper/full/4/1/a/1192720-desktop-wallpaper-space-theme-1920x1080-full-hd.jpg', name: 'Earth' },
+                    { url: 'https://e0.pxfuel.com/wallpapers/344/311/desktop-wallpaper-best-space-cool-outer-space.jpg', name: 'Moon' },
                     { url: 'https://freerangestock.com/sample/51754/blue-background-indicates-swirling-bubble-and-twist.jpg', name: 'Bubble' },
+                    // { url: 'https://5.imimg.com/data5/XM/YE/GLADMIN-13706578/aironman.png', name: 'Iron Man' },
+                    { url: 'https://i0.wp.com/www.techjunkie.com/wp-content/uploads/2017/02/The-best-space-wallpapers-for-your-desktop-1.jpg?fit=900%2C563&ssl=1', name: 'Galaxy' },
                     { url: 'https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/b1/58/26/b15826f6-c8ec-4017-e293-50052d6b00df/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg', name: 'Color' },
                     { url: 'https://e0.pxfuel.com/wallpapers/239/996/desktop-wallpaper-40-best-finest-apple-for-and-for-your-mobile-tablet-explore-apple-laptop-mac-computer-apple-apple-background-macbook.jpg', name: 'Apple' },
                     { url: 'https://images.pling.com/cache/400x400/img/00/00/70/79/44/2015869/seaside-resort-01.jpg', name: 'Nature' }

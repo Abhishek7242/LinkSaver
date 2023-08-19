@@ -177,6 +177,12 @@ left: -100px;
 transition: all 0.3s ease-in-out;
 
 }
+.bi-moon-star{
+    display: none;
+}
+.bi-brightness-high-fil{
+    display: none;
+}
 #sectioninputBox{
     background: url('https://media.istockphoto.com/id/1435226158/photo/circuit-board-background-computer-data-technology-artificial-intelligence.jpg?b=1&s=612x612&w=0&k=20&c=I8gIoXrpraVvPfQJ8NN3-kJKOP4yWw3FLNIsXo1dwks=') no-repeat center center/cover;
     overflow: hidden;
@@ -512,7 +518,7 @@ transform: rotate(180deg);
 @media (max-width:767px) {
     .nav-li-nightmodeBtn{
         display: flex;
-        justify-content: end;
+        /* justify-content: end; */
     }
     #info{
         width: 100%;
