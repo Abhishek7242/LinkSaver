@@ -394,7 +394,8 @@ if (localStorage.length > 0) {
                             // boxA.id = 'boxA' + index
                             let str = name
                             let extractedText
-                            if (inputHTML.includes('https://') && inputHTML.includes('.com/')) {
+                            if (inputHTML.includes('https://') && inputHTML.includes('.com/') || inputHTML.includes('https://')) {
+
                                 const url = inputHTML;
                                 const startIndex = url.indexOf('.com/') + 5;
                                 const endIndex = url.indexOf('/', startIndex);
@@ -415,7 +416,7 @@ if (localStorage.length > 0) {
                             boxA.classList.add('bg-info')
                             boxA.classList.add('py-2')
                             boxA.classList.add('px-4')
-                            function getWebsiteLogo(websiteUrl) {
+                            function getWebsiteLogo(websiteUrl) {   
                                 // Construct the favicon URL based on the website URL
                                 const faviconUrl = `${websiteUrl}/favicon.ico`;
                                 boxImg.src = faviconUrl;

@@ -76,7 +76,58 @@ addNewBox.addEventListener('click', () => {
             boxImg.setAttribute('width', '100px')
             let boxA = document.createElement('a')
             boxA.id = 'boxA' + index
-            boxA.href = urlinput.value
+            let inputHTML = urlinput.value
+            const url = urlinput.value;
+            const startIndex = url.indexOf('.com/') + 5;
+            const endIndex = url.indexOf('/', startIndex);
+            let extractedText = url.substring(startIndex, endIndex);
+
+            console.log(extractedText);
+            // if (inputHTML.includes('https://https%')) {
+            //     var encodedUrl = inputHTML;
+
+            //     // Decode the URL-encoded string
+            //     var decodedUrl = decodeURIComponent(encodedUrl);
+
+            //     // Remove any repeated "https://" at the beginning
+            //     if (decodedUrl.startsWith("https://https://")) {
+            //         decodedUrl = decodedUrl.replace(/^https:\/\//, '');
+            //     } else {
+            //         decodedUrl = decodedUrl
+            //     }
+
+            //     console.log(decodedUrl);
+            //     const url = decodedUrl;
+            //     const startIndex = url.indexOf('.com/') + 5;
+            //     const endIndex = url.indexOf('/', startIndex);
+            //     extractedText = url.substring(startIndex, endIndex);
+            //     urlSave = url
+
+            //     boxA.href = url;
+            // }
+            if (inputHTML.includes('https://') && inputHTML.includes('.com/') || inputHTML.includes('https://')) {
+                const url = inputHTML;
+                const startIndex = url.indexOf('.com/') + 5;
+                const endIndex = url.indexOf('/', startIndex);
+                extractedText = url.substring(startIndex, endIndex);
+                console.log(url);
+urlSave=url
+
+                boxA.href = url;
+
+                // console.log(boxA.href = url);
+            }
+            else {
+                let url = 'https://' + encodeURIComponent(inputHTML) + '.com/'; // Encode the inputHTML before appending it to the URL
+                const startIndex = url.indexOf('.com/') + 5;
+                const endIndex = url.indexOf('/', startIndex);
+                extractedText = url.substring(startIndex, endIndex);
+                console.log(url);
+urlSave=url
+                boxA.href = url;
+            }
+
+         
             boxA.classList.add('text-dark')
             boxA.classList.add('bg-info')
             boxA.classList.add('py-2')
@@ -85,12 +136,7 @@ addNewBox.addEventListener('click', () => {
             boxA.innerText = str[0].toUpperCase() + str.slice(1)
             boxA.setAttribute('role', 'button')
 
-            const url = urlinput.value;
-            const startIndex = url.indexOf('.com/') + 5;
-            const endIndex = url.indexOf('/', startIndex);
-            const extractedText = url.substring(startIndex, endIndex);
-
-            console.log(extractedText);
+          
 
             function getWebsiteLogo(websiteUrl) {
                 // Construct the favicon URL based on the website URL
@@ -503,7 +549,7 @@ addNewBox.addEventListener('click', () => {
 
 
 
-            urlSave = urlinput.value;
+        
 
 
 
@@ -556,6 +602,7 @@ if (localStorage.length > 0) {
 
 
 
+   
 
         let box = document.createElement('div')
         box.classList.add('box')
@@ -766,19 +813,47 @@ if (localStorage.length > 0) {
         // boxA.id = 'boxA' + index
         let str = name
         let extractedText
-        if (inputHTML.includes('https://') && inputHTML.includes('.com/')) {
+    //     if (inputHTML.includes('https://https%')) {
+    //        var encodedUrl = inputHTML;
+
+    //        // Decode the URL-encoded string
+    //        var decodedUrl = decodeURIComponent(encodedUrl);
+
+    //        // Remove any repeated "https://" at the beginning
+    //        if (decodedUrl.startsWith("https://https://")) {
+    //            decodedUrl = decodedUrl.replace(/^https:\/\//, '');
+    //        } else {
+    //            decodedUrl=decodedUrl
+    //        }
+
+    //        console.log(decodedUrl);
+    //        const url = decodedUrl;
+    //        const startIndex = url.indexOf('.com/') + 5;
+    //        const endIndex = url.indexOf('/', startIndex);
+    //        extractedText = url.substring(startIndex, endIndex);
+    //        localStorage.setItem('url' + key.slice(4), url);
+
+    //        boxA.href = url;
+    //    }
+    //     else
+            if (inputHTML.includes('https://') && inputHTML.includes('.com/') || inputHTML.includes('https://')) {
             const url = inputHTML;
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
+            console.log(url);
             boxA.href = url;
+
             // console.log(boxA.href = url);
-        } else {
+        }
+        else  {
             let url = 'https://' + encodeURIComponent(inputHTML) + '.com/'; // Encode the inputHTML before appending it to the URL
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
             localStorage.setItem('url' + key.slice(4), url);
+            console.log(url);
+
             boxA.href = url;
         }
 
