@@ -515,10 +515,17 @@ transform: rotate(180deg);
     }
 }
 
-@media (max-width:767px) {
+@media (max-width:768px) {
     .nav-li-nightmodeBtn{
         display: flex;
-        /* justify-content: end; */
+        justify-content: end;
+    }
+    #nightMode{
+        display: none;
+    }
+    #nightModeMobile .bi-moon-star{
+        color: #000;
+        display: inline;
     }
     #info{
         width: 100%;
