@@ -17,6 +17,7 @@ let mode = sessionStorage.getItem('mode')
 //     section1.style.background = 'white'
 //     nightMode.style.color = 'black'
 moonStarFill.style.display = 'none'
+
 // }
 if (mode === 'lightmode') {
     if (isMobileDevice()) {
@@ -26,7 +27,9 @@ if (mode === 'lightmode') {
 
         moonStarFil.style.display = 'none'
         moonStarFil.style.setProperty('display', 'none', 'important');
+        downBtn.style.color = '#fed494'
 
+        
         moonStar.style.display = 'none'
         moonStarFill.style.display = 'none'
         mainContainer.style.background = '#FBFBE3'
@@ -39,9 +42,9 @@ if (mode === 'lightmode') {
         // Add/remove classes or apply styles specific to mobile devices
     } else {
         
+        downBtn.style.color = 'black'
         moonStar.style.display = 'inline'
         moonStarFill.style.display = 'none'
-        
         mainContainer.style.background = '#FBFBE3'
         markedContainer.style.background = '#FBFBE3'
         section1.style.background = '#FBFBE3'
@@ -84,14 +87,15 @@ if (mode === 'lightmode') {
 
         moonStarFil.style.display = 'inline'
         moonStarFil.style.setProperty('display', 'inline', 'important');
-
+        
         moonStar.style.display = 'none'
         moonStarFill.style.display = 'none'
         mainContainer.style.background = '#010026'
         markedContainer.style.background = '#010026'
+        downBtn.style.color = 'black'
         section1.style.background = '#010026'
-
-
+        
+        
         nightMode.style.color = '#fed494'
         navAddImg.style.background = '#fed494'
         nightModeMobile.style.color = '#fed494'
@@ -100,11 +104,12 @@ if (mode === 'lightmode') {
         
         moonStar.style.display = 'none'
         moonStarFill.style.display = 'inline'
+        downBtn.style.color = '#fed494'
         mainContainer.style.background = '#010026'
         markedContainer.style.background = '#010026'
         section1.style.background = '#010026'
         
-        
+
         nightMode.style.color = '#fed494'
         navAddImg.style.background = '#fed494'
         

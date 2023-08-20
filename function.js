@@ -27,6 +27,54 @@ let checkMobile = (inputBox) => {
         inputBox.style.opacity = 1
     }
 }
+function decodeAndRemoveLastSegment(encodedUrl) {
+    try {
+        var decodedUrl = decodeURIComponent(encodedUrl);
+        var segments = decodedUrl.split('/');
+        if (segments.length > 2) {
+            segments.pop();
+            return segments.join('/');
+        }
+        return decodedUrl;
+    } catch (error) {
+        console.error('Error decoding URL:', error.message);
+        return encodedUrl;
+    }
+}
+
+
+
+
+function cleanUrl(url) {
+
+    if (url.includes('https://https://')) {
+
+        try {
+            // Remove any repeated "https://" at the beginning
+            var cleanedUrl = url.replace(/^https:\/\//, '');
+
+            // Decode the URL if it's URL-encoded
+            cleanedUrl = decodeURIComponent(cleanedUrl);
+
+            // Remove the last path segment
+            var segments = cleanedUrl.split('/');
+            if (segments.length > 2) {
+                segments.pop();
+                cleanedUrl = segments.join('/');
+            }
+
+            return cleanedUrl;
+        } catch (error) {
+            console.error('Error processing URL:', error.message);
+            return url;
+        }
+    }
+    else {
+        return url
+    }
+}
+
+
 
 function hideTheInputPage(inputBox) {
     inputBox.style.width = '20%';
