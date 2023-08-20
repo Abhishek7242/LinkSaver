@@ -545,14 +545,14 @@ if (localStorage.length > 0) {
         let background = localStorage.getItem('background' + key.slice(4));
         let star = localStorage.getItem('star' + key.slice(4));
 
-        let encodedUrl = inputHTML;
-        let cleanedUrl = decodeAndRemoveLastSegment(encodedUrl);
+        // let encodedUrl = inputHTML;
+        // let cleanedUrl = decodeAndRemoveLastSegment(encodedUrl);
        
 
         
-        let urlForCleaning = cleanedUrl;
-        let cleanedUrlAgain = cleanUrl(urlForCleaning);
-        console.log(cleanedUrlAgain);
+        // let urlForCleaning = cleanedUrl;
+        // let cleanedUrlAgain = cleanUrl(urlForCleaning);
+        // console.log(cleanedUrlAgain);
 
 
 
@@ -771,7 +771,7 @@ if (localStorage.length > 0) {
             const startIndex = url.indexOf('.com/') + 5;
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
-            boxA.href = cleanedUrlAgain;
+            boxA.href = url;
             // console.log(boxA.href = url);
         } else {
             let url = 'https://' + encodeURIComponent(inputHTML) + '.com/'; // Encode the inputHTML before appending it to the URL
@@ -779,7 +779,7 @@ if (localStorage.length > 0) {
             const endIndex = url.indexOf('/', startIndex);
             extractedText = url.substring(startIndex, endIndex);
             localStorage.setItem('url' + key.slice(4), url);
-            boxA.href = cleanedUrlAgain;
+            boxA.href = url;
         }
 
         // console.log(boxA.href)
