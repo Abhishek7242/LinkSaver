@@ -99,6 +99,10 @@ background-color: #FFFDD0!important;
       /* Adjust this color as desired */
   }
 
+  #downBtn{
+    color: black;
+  }
+
 
 .lightMode{
     background-color: transparent;
